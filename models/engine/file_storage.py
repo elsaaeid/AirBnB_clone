@@ -16,7 +16,7 @@ class FileStorage:
     __objects = {}
 
     def __init__(self):
-        """ Initializes objects """
+        """ initializes objects """
         pass
 
     def all(self):
@@ -24,7 +24,7 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        """ Creates a new instance """
+        """ creates a new instance """
         FileStorage.__objects["{}.{}".format(obj.__class__.__name__,
                                              obj.id)] = obj
 

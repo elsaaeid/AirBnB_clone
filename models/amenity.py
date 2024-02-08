@@ -5,7 +5,7 @@
 from models.base_model import BaseModel
 
 class Amenity(BaseModel):
-    """this is amenity clas"""
+    """this is amenity class"""
     name = ""
 
     def __init__(self, *args, **kwargs):

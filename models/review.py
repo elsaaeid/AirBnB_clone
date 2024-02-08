@@ -4,7 +4,7 @@ from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """ class to create review objects """
+    """ class to create review object properties """
     text = ""
     user_id = ""
     place_id = ""

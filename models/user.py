@@ -4,7 +4,7 @@ from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """ class to create user objects """
+    """ class to create user object properties """
     first_name = ""
     last_name = ""
     email = ""

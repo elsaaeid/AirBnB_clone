@@ -36,7 +36,7 @@ class BaseModel:
             models.storage.new = (self)
         def __str__(self):
             """returns string representation"""
-            return ("[{}] ({}) {}".format(self.__class.__name__,
+            return ("[{}] ({}) {}".format(self.__class__.__name__,
                                           self.id, self.__dict__))
         def save(self):
             """updates the update_at"""

@@ -67,7 +67,7 @@ class TestModels(unittest.TestCase):
 
 
     def placeCityTest(self):
-        """ This checks the amenity methods exists"""
+        """ This checks the amenity methods exists."""
 
         self.amenity_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -75,7 +75,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.amenity_test, "name"))
 
     def amenityNameTest(self):
-        """This checks if the name is created"""
+        """This checks if the name is created."""
 
         self.amenity_test.name = 'Good'
         self.assertEqual(self.amenity_test.name, 'Good')

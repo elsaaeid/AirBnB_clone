@@ -32,10 +32,10 @@ class TestStringMethods(unittest.TestCase):
 
 
 class TestModels(unittest.TestCase):
-    """It is a function to test the BaseModel"""
+    """It is a function to test the BaseModel."""
 
     def setUp(self):
-        """This sets a variable"""
+        """This sets a variable."""
 
         self.city_1 = City()
         self.city_1.state_id = "100"

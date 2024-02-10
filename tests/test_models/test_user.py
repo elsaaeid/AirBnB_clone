@@ -7,12 +7,12 @@ from models.engine.file_storage import FileStorage
 
 
 def setUpModule():
-    """ Funtion to set a Module"""
+    """ Funtion to set up a Module"""
     pass
 
 
 def tearDownModule():
-    """ Function to delete a Module"""
+    """ Function to clean up a Module"""
     pass
 
 

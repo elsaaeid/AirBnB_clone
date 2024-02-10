@@ -30,24 +30,24 @@ class TestStringMethods(unittest.TestCase):
                               "Found code style errors (and warning).")
 
 class TestModels(unittest.TestCase):
-    """ It is function to test the BaseModel"""
+    """ It is function to test the BaseModel."""
 
     def setUp(self):
-        """This sets a variable"""
+        """This sets a variable."""
 
         self.amenity_test = Amenity()
         print("setUp")
 
 
     def tearDown(self):
-        """This ends variable"""
+        """This ends variable."""
 
         print("tearDown")
 
 
     @classmethod
     def setUpClass(cls):
-        """This defines class"""
+        """This defines class."""
 
         print("setUpClass")
 

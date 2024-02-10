@@ -70,7 +70,7 @@ class TestModels(unittest.TestCase):
 
 
     def cityExistTest(self):
-        """This checks if the city methods exists"""
+        """This checks if the city methods exists."""
 
         self.city_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -80,7 +80,7 @@ class TestModels(unittest.TestCase):
 
 
     def cityNameTest(self):
-        """This checks if the name is created"""
+        """This checks if the name is created."""
 
         self.city_test.name = 'Paris'
         self.assertEqual(self.city_test.name, 'Paris')

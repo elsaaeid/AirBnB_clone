@@ -73,7 +73,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.place_test, "longitude"))
         self.assertTrue(hasattr(self.place_test, "amenity_ids"))
 
-    def modelsToDictTest(self)
+    def modelsToDictTest(self):
         models_dict = self.place_test.to_dict()
         self.assertIsInstance(models_dict["id"], str)
         self.assertIsInstance(models_dict["created_at"], str)

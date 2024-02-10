@@ -59,7 +59,7 @@ class TestModels(unittest.TestCase):
 
 
     def modelsDocumentTest(self):
-        """This checks the documentation"""
+        """This checks the documentation."""
 
         self.assertIsNotNone(BaseModel.__doc__)
         self.assertIsNotNone(BaseModel.__init__.__doc__)
@@ -69,20 +69,20 @@ class TestModels(unittest.TestCase):
 
 
     def modelsNameTest(self):
-        """This checks if name is created"""
+        """This checks if name is created."""
 
         self.my_model.name = 'Holberton'
         self.assertEqual(self.my_model.name, 'Holberton')
 
 
     def modelsNumberTest(self):
-        """This checks if the number is created"""
+        """This checks if the number is created."""
 
         self.assertEqual(self.my_model.my_number, 55)
 
 
     def modelsExistTest(self):
-        """ This checks if the json file and methods are existed"""
+        """ This checks if the json file and methods are existed."""
 
         self.my_model.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -93,7 +93,7 @@ class TestModels(unittest.TestCase):
 
 
     def modelsNonEmptyTest(self):
-        """This checks if the json file is not empty"""
+        """This checks if the json file is not empty."""
 
         self.assertTrue('file.json')
 

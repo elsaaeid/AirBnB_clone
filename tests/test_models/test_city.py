@@ -96,7 +96,7 @@ class TestModels(unittest.TestCase):
 
 
     def cityInstanceTest(self):
-        """This checks if city_test is instance of City"""
+        """This checks if city_test is instance of City."""
         self.assertIsInstance(self.city_test, City)
 
 

@@ -54,13 +54,13 @@ class TestModels(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """This closes the class"""
+        """This closes the class."""
 
         print("tearDownClass")
 
 
     def amenityDocumentTest(self):
-        """This checks the documetation"""
+        """This checks the documetation."""
 
         self.assertIsNotNone(Amenity.__doc__)
         self.assertIsNotNone(Amenity.__init__.__doc__)

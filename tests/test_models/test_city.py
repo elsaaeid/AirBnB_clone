@@ -57,13 +57,13 @@ class TestModels(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """This closes the class"""
+        """This closes the class."""
 
         print("tearDownClass")
 
 
     def cityDocumetationTest(self):
-        """This checks the documentation"""
+        """This checks the documentation."""
 
         self.assertIsNotNone(City.__doc__)
         self.assertIsNotNone(City.__init__.__doc__)

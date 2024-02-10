@@ -84,7 +84,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(self.user_test.password, "root")
 
     def modelsToDictTest(self):
-        model.dict = self.user_test.to_dict()
+        model_dict = self.user_test.to_dict()
         self.assertIsInstance(model_dict["id"], str)
         self.assertIsInstance(model_dict["email"], str)
         self.assertIsInstance(model_dict["created_at"], str)

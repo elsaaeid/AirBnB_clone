@@ -43,14 +43,14 @@ class TestModels(unittest.TestCase):
 
     
     def tearDown(self):
-        """This ends variable"""
+        """This ends variable."""
 
         print("tearDown")
 
 
     @classmethod
     def setUpClass(cls):
-        """This defines class"""
+        """This defines class."""
 
         print("setUpClass")
 

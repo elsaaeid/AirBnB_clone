@@ -68,6 +68,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(self.state_test.name, 'Best')
 
     def modelsToDictTest(self):
+        """ Check if models converted to dictionary """
         model_dict = self.state_file.to_dict()
         self.assertIsInstance(model_dict["created_at"], str)
         self.assertIsInstance(model_dict["updated_at"], str)

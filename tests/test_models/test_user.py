@@ -84,6 +84,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(self.user_test.password, "root")
 
     def modelsToDictTest(self):
+        """ Check if models converted to dictionary """
         model_dict = self.user_test.to_dict()
         self.assertIsInstance(model_dict["id"], str)
         self.assertIsInstance(model_dict["email"], str)
@@ -91,7 +92,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(model_dict["updated_at"], str)
 
     def userInstanceTest(self):
-        """ check if user is instance of User """
+        """ Check if user is instance of User """
         self.assertIsInstance(self.user_test, User)
 
 if __name__ == '__main__':

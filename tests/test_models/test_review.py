@@ -63,7 +63,8 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.review_test, "user_id"))
         self.assertTrue(hasattr(self.review_test, "place_id"))
 
-    def modelItoDictTest(self):
+    def modelsToDictTest(self):
+        """ Check if models converted to dictionary """
         model_dict = self.review_test.to_dict()
         self.assertIsInstance(model_dict["user_id"], str)
         self.assertIsInstance(model_dict["id"], str)

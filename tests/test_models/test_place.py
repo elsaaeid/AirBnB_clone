@@ -57,7 +57,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(Place.__init__.__doc__)
 
     def cityExistTest(self):
-        """ check if the city was created """
+        """ Check if the city was created """
         self.place_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.place_test, "__init__"))
@@ -74,6 +74,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.place_test, "amenity_ids"))
 
     def modelsToDictTest(self):
+        """ Check if models converted to dictionary """
         models_dict = self.place_test.to_dict()
         self.assertIsInstance(models_dict["id"], str)
         self.assertIsInstance(models_dict["created_at"], str)

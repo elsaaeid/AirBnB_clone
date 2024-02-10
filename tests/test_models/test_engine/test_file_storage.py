@@ -30,7 +30,7 @@ class TestString(unittest.TestCase):
 class TestModels(unittest.TestCase):
 
     def setUp(self):
-        """ Set a variable """
+        """ Set up a variable """
         self.my_model = BaseModel()
         self.file_storage = FileStorage()
         print("setUp")
@@ -41,15 +41,15 @@ class TestModels(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """ Set a Class """
+        """ Set up a Class """
         print("setUpClass")
 
     @classmethod
     def tearDownClass(cls):
-        """ Clean a Class"""
+        """ Clean up a Class"""
         print("tearDownClass")
 
-    def file_storageTest(self):
+    def fileStorageTest(self):
         """ Check the documentation of file storage """
         self.assertIsNotNone(FileStorage.__doc__)
         self.assertIsNotNone(FileStorage.__init__.__doc__)
@@ -58,7 +58,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(FileStorage.save.__doc__)
         self.assertIsNotNone(FileStorage.reload.__doc__)
 
-    def file_storage_existTest(self):
+    def fileStorageExistTest(self):
         """ Check if methods exist """
         self.assertTrue(hasattr(self.file_storage, "__init__"))
         self.assertTrue(hasattr(self.file_storage, "all"))
@@ -66,7 +66,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.file_storage, "save"))
         self.assertTrue(hasattr(self.file_storage, "reload"))
 
-    def models_saveTest(self):
+    def modelsSaveTest(self):
         """ Check if the save of function works """
         self.my_model.name = "Hello"
         self.my_model.save()

@@ -57,7 +57,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(User.__doc__)
         self.assertIsNotNone(User.__init__.__doc__)
 
-    def place_cityTest(self):
+    def placeCityTest(self):
         """ check if the city name is create """
         self.user_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -67,30 +67,30 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.user_test, "email"))
         self.assertTrue(hasattr(self.user_test, "password"))
 
-    def user_firstNameTest(self):
+    def userFirstNameTest(self):
         """ check if the name is create """
         self.assertEqual(self.user_test.firstname, 'Said')
 
-    def user_lastNameTest(self):
+    def userLastNameTest(self):
         """ chaeck if the lastname is create """
         self.assertEqual(self.user_test.lastname, "Ellithy")
 
-    def user_emailTest(self):
+    def userEmailTest(self):
         """ chaeck if the email is create """
         self.assertEqual(self.user_test.email, 'saidsadaoy@gmail.com')
 
-    def user_passwordTest(self):
+    def userPasswordTest(self):
         """ chaeck if the password is create """
         self.assertEqual(self.user_test.password, "root")
 
-    def models_to_dictTest(self):
-        model_dict = self.user_test.to_dict()
+    def modelsToDictTest(self):
+        model.dict = self.user_test.to_dict()
         self.assertIsInstance(model_dict["id"], str)
         self.assertIsInstance(model_dict["email"], str)
         self.assertIsInstance(model_dict["created_at"], str)
         self.assertIsInstance(model_dict["updated_at"], str)
 
-    def user_instanceTest(self):
+    def userInstanceTest(self):
         """ check if user is instance of User """
         self.assertIsInstance(self.user_test, User)
 

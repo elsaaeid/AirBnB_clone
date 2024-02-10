@@ -31,14 +31,14 @@ class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
 
     def setUp(self):
-        """ Set a variable """
+        """ Set up a variable """
         self.place_test = Place()
         self.place_test.number_bathrooms = 1
         self.place_test.longitude = 10.10
         print("setUp")
 
     def tearDown(self):
-        """ cleanup variable """
+        """ clean up variable """
         print("tearDown")
 
     @classmethod
@@ -56,7 +56,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(Place.__doc__)
         self.assertIsNotNone(Place.__init__.__doc__)
 
-    def place_cityTest(self):
+    def placeCityTest(self):
         """ check if the city name is create """
         self.place_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -73,7 +73,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.place_test, "longitude"))
         self.assertTrue(hasattr(self.place_test, "amenity_ids"))
 
-    def models_to_dictTest(self)
+    def modelsToDictTest(self)
         models_dict = self.place_test.to_dict()
         self.assertIsInstance(models_dict["id"], str)
         self.assertIsInstance(models_dict["created_at"], str)
@@ -81,7 +81,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(models_dict["number_bathrooms"], int)
         self.assertIsInstance(models_dict["longitude"], float)
 
-    def place_is_instanceTest(self):
+    def placeIsInstanceTest(self):
         """ check if place is instance of Place """
         self.assertIsInstance(self.place_test, Place)
 

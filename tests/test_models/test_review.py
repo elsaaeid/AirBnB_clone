@@ -54,7 +54,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(Review.__doc__)
         self.assertIsNotNone(Review.__init__.__doc__)
 
-    def review_existTest(self):
+    def reviewExistTest(self):
         """ check if the methods exist """
         self.review_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -63,14 +63,14 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.review_test, "user_id"))
         self.assertTrue(hasattr(self.review_test, "place_id"))
 
-    def models_to_dictTest(self):
+    def modelItoDictTest(self):
         model_dict = self.review_test.to_dict()
         self.assertIsInstance(model_dict["user_id"], str)
         self.assertIsInstance(model_dict["id"], str)
         self.assertIsInstance(model_dict["created_at"], str)
         self.assertIsInstance(model_dict["updated_at"], str)
 
-    def user_instanceTest(self):
+    def userInstanceTest(self):
         """ check if review is instance of Review """
         self.assertIsInstance(self.review_test, Review)
 

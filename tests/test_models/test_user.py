@@ -57,8 +57,8 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(User.__doc__)
         self.assertIsNotNone(User.__init__.__doc__)
 
-    def cityExistTest(self):
-        """ Check if the city name was created """
+    def userExistTest(self):
+        """ Check if the user was created """
         self.user_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.user_test, "__init__"))

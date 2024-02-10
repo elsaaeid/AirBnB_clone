@@ -1,0 +1,129 @@
+#!/usr/bin/python3
+
+import unittest
+import pep8
+import os
+from models.__init__ import storage
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+
+
+def setUpModule():
+    """ """
+    pass
+
+def tearDownModule():
+    """ """
+    pass
+
+
+class TestStringMethods(unittest.TestCase):
+    """This will check the pep8."""
+
+    def testpep8(self):
+        style = pep8.StyleGuide(quiet = True)
+        file1 = "models/base_model.py"
+        file2 = "tests/test_models/test_base_model.py"
+        check = style.check_files([file1, file2])
+        self.assertEqual(check.total_errors, 0, 
+                              "Found code style errors (and warning).")
+
+class TestModels(unittest.TestCase):
+
+    def setUp(self):
+        """This sets a variable"""
+
+        self.my_model = BaseModel()
+        self.my_model.my_number = 55
+        print("setUp")
+
+
+    def tearDown(self):
+        """This ends variable"""
+
+        print("tearDown")
+
+
+    @classmethod
+    def setUpClass(cls):
+        """This sets a class"""
+
+        print("setUpClass")
+
+
+    @classmethod
+    def tearDownClass(cls):
+        """del a class"""
+
+        print("tearDownClass")
+
+
+    def modelsDocumentTest(self):
+        """This checks the documentation"""
+
+        self.assertIsNotNone(BaseModel.__doc__)
+        self.assertIsNotNone(BaseModel.__init__.__doc__)
+        self.assertIsNotNone(BaseModel.save.__doc__)
+        self.assertIsNotNone(BaseModel.__str__.__doc__)
+        self.assertIsNotNone(BaseModel.to_dict.__doc__)
+
+
+    def modelsNameTest(self):
+        """This checks if name is created"""
+
+        self.my_model.name = 'Holberton'
+        self.assertEqual(self.my_model.name, 'Holberton')
+
+
+    def modelsNumberTest(self):
+        """This checks if the number is created"""
+
+        self.assertEqual(self.my_model.my_number, 55)
+
+
+    def modelsExistTest(self):
+        """ This checks if the json file and methods are existed"""
+
+        self.my_model.save()
+        self.assertTrue(os.path.isfile('file.json'))
+        self.assertTrue(hasattr(self.my_model, "__init__"))
+        self.assertTrue(hasattr(self.my_model, "__str__"))
+        self.assertTrue(hasattr(self.my_model, "save"))
+        self.assertTrue(hasattr(self.my_model, "to_dict"))
+
+
+    def modelsNonEmptyTest(self):
+        """This checks if the json file is not empty"""
+
+        self.assertTrue('file.json')
+
+
+    def modelsSaveTest(self):
+        """This checks if the save function works"""
+
+        a = self.my_model.updated_at()
+        self.my_model.save()
+        self.assertNotEqual(a, self.my_model.update_at)
+        self.assertNotEqual(self.my_model.created_at,
+                                         self.my_model.updated_at)
+
+
+
+    def modelsInstanceTest(self):
+        """This checks if user_test is instance of user"""
+
+        self.assertIsInstance(self.my_model, BaseModel)
+
+
+    def modelsToDictTest(self):
+
+        model_dict = self.my_model.to_dict()
+        self.assertIsInstance(model_dict["created_at"], str)
+        self.assertIsInstance(model_dict["updated_at"], str)
+        self.assertIsInstance(model_dict["my_number"], int)
+        self.assertIsInstance(model_dict["id"], str)
+
+
+if __name__ == '__main__':
+    unittest.main()
+

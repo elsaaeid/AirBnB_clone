@@ -57,7 +57,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(User.__doc__)
         self.assertIsNotNone(User.__init__.__doc__)
 
-    def placeCityTest(self):
+    def CityExistTest(self):
         """ check if the city name is create """
         self.user_test.save()
         self.assertTrue(os.path.isfile('file.json'))

@@ -55,7 +55,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(State.__doc__)
         self.assertIsNotNone(State.__init__.__doc__)
 
-    def placeCityTest(self):
+    def stateTest(self):
         """ check if the state methods exist """
         self.state_test.save()
         self.assertTrue(os.path.isfile('file.json'))

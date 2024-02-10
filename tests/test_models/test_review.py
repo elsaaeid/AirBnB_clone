@@ -7,12 +7,12 @@ from models.engine.file_storage import FileStorage
 
 
 def setUpModule():
-    """ Funtion to set a Module"""
+    """ Funtion to set up a Module"""
     pass
 
 
 def tearDownModule():
-    """ Function to remove a Module"""
+    """ Function to clean up a Module"""
     pass
 
 
@@ -31,23 +31,23 @@ class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
 
     def setUp(self):
-        """ Set a variable """
+        """ Set up a variable """
         self.review_test = Review()
         self.review_test.user_id = "bnb209"
         print("setUp")
 
     def tearDown(self):
-        """ clean up a variable """
+        """ Clean up a variable """
         print("tearDown")
 
     @classmethod
     def setUpClass(cls):
-        """ set up a class """
+        """ Set up a class """
         print("setUpClass")
 
     @classmethod
     def tearDownClass(cls):
-        """ clean up the class """
+        """ Clean up the class """
         print("tearDownClass")
 
     def userTest(self):
@@ -55,7 +55,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(Review.__init__.__doc__)
 
     def reviewExistTest(self):
-        """ check if the methods exist """
+        """ Check if the methods exist """
         self.review_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.review_test, "__init__"))
@@ -71,7 +71,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(model_dict["updated_at"], str)
 
     def userInstanceTest(self):
-        """ check if review is instance of Review """
+        """ Check if review is instance of Review """
         self.assertIsInstance(self.review_test, Review)
 
 if __name__ == '__main__':

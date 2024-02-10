@@ -40,17 +40,17 @@ class TestModels(unittest.TestCase):
         print("setUp")
 
     def tearDown(self):
-        """ clean up variable """
+        """ Clean up variable """
         print("tearDown")
 
     @classmethod
     def setUpClass(cls):
-        """ set up class """
+        """ Set up class """
         print("setUpClass")
 
     @classmethod
     def tearDownClass(cls):
-        """ clean up the class """
+        """ Clean up the class """
         print("tearDownClass")
 
     def userTest(self):
@@ -58,7 +58,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(User.__init__.__doc__)
 
     def cityExistTest(self):
-        """ check if the city name is create """
+        """ Check if the city name was created """
         self.user_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.user_test, "__init__"))
@@ -68,19 +68,19 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.user_test, "password"))
 
     def userFirstNameTest(self):
-        """ check if the name is create """
+        """ Check if the firstname was created """
         self.assertEqual(self.user_test.firstname, 'Said')
 
     def userLastNameTest(self):
-        """ chaeck if the lastname is create """
+        """ Check if the lastname was created """
         self.assertEqual(self.user_test.lastname, "Ellithy")
 
     def userEmailTest(self):
-        """ chaeck if the email is create """
+        """ Check if the email was created """
         self.assertEqual(self.user_test.email, 'saidsadaoy@gmail.com')
 
     def userPasswordTest(self):
-        """ chaeck if the password is create """
+        """ Check if the password was created """
         self.assertEqual(self.user_test.password, "root")
 
     def modelsToDictTest(self):

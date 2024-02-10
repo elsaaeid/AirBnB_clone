@@ -56,14 +56,14 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(State.__init__.__doc__)
 
     def stateExistTest(self):
-        """ check if the state methods exist """
+        """ Check if the state methods exist """
         self.state_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.state_test, "__init__"))
         self.assertTrue(hasattr(self.state_test, "name"))
 
     def stateNameTest(self):
-        """ check if the name is create """
+        """ Check if the name was created """
         self.state_test.name = 'Best'
         self.assertEqual(self.state_test.name, 'Best')
 
@@ -73,7 +73,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(model_dict["updated_at"], str)
 
     def stateInstanceTest(self):
-        """ check if state is instance of State """
+        """ Check if state is instance of State """
         self.assertIsInstance(self.state_test, State)
 
 if __name__ == '__main__':

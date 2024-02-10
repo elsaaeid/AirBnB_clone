@@ -38,26 +38,26 @@ class TestModels(unittest.TestCase):
         print("setUp")
 
     def tearDown(self):
-        """ clean up variable """
+        """ Clean up variable """
         print("tearDown")
 
     @classmethod
     def setUpClass(cls):
-        """ set up the class """
+        """ Set up the class """
         print("setUpClass")
 
     @classmethod
     def tearDownClass(cls):
-        """ cleanup the class """
+        """ Clean up the class """
         print("tearDownClass")
 
     def placeTest(self):
-        """ check documentation """
+        """ Check documentation """
         self.assertIsNotNone(Place.__doc__)
         self.assertIsNotNone(Place.__init__.__doc__)
 
     def CityExistTest(self):
-        """ check if the city name is create """
+        """ check if the city was created """
         self.place_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.place_test, "__init__"))
@@ -82,7 +82,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(models_dict["longitude"], float)
 
     def placeIsInstanceTest(self):
-        """ check if place is instance of Place """
+        """ Check if place is instance of Place """
         self.assertIsInstance(self.place_test, Place)
 
 

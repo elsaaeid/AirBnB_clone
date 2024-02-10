@@ -90,7 +90,7 @@ class TestModels(unittest.TestCase):
 
 
     def amenityInstanceTest(self):
-        """This checks if amenity_test is instance of Amenity"""
+        """This checks if amenity_test is instance of Amenity."""
 
         self.assertIsInstance(self.amenity_test, Amenity)
 

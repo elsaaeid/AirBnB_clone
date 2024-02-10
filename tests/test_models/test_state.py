@@ -50,7 +50,7 @@ class TestModels(unittest.TestCase):
         """ Clean up the class """
         print("tearDownClass")
 
-    def amenityTest(self):
+    def stateTest(self):
         """ Check the documentation """
         self.assertIsNotNone(State.__doc__)
         self.assertIsNotNone(State.__init__.__doc__)
@@ -62,7 +62,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.state_test, "__init__"))
         self.assertTrue(hasattr(self.state_test, "name"))
 
-    def amenityNameTest(self):
+    def stateNameTest(self):
         """ check if the name is create """
         self.state_test.name = 'Best'
         self.assertEqual(self.state_test.name, 'Best')
@@ -72,7 +72,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(model_dict["created_at"], str)
         self.assertIsInstance(model_dict["updated_at"], str)
 
-    def amenityInstanceTest(self):
+    def stateInstanceTest(self):
         """ check if state is instance of State """
         self.assertIsInstance(self.state_test, State)
 

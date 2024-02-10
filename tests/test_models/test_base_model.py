@@ -31,7 +31,7 @@ class TestStringMethods(unittest.TestCase):
 class TestModels(unittest.TestCase):
 
     def setUp(self):
-        """This sets a variable"""
+        """This sets a variable."""
 
         self.my_model = BaseModel()
         self.my_model.my_number = 55
@@ -39,21 +39,21 @@ class TestModels(unittest.TestCase):
 
 
     def tearDown(self):
-        """This ends variable"""
+        """This ends variable."""
 
         print("tearDown")
 
 
     @classmethod
     def setUpClass(cls):
-        """This sets a class"""
+        """This sets a class."""
 
         print("setUpClass")
 
 
     @classmethod
     def tearDownClass(cls):
-        """del a class"""
+        """del a class."""
 
         print("tearDownClass")
 

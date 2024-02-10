@@ -99,7 +99,7 @@ class TestModels(unittest.TestCase):
 
 
     def modelsSaveTest(self):
-        """This checks if the save function works"""
+        """This checks if the save function works."""
 
         a = self.my_model.updated_at()
         self.my_model.save()
@@ -110,7 +110,7 @@ class TestModels(unittest.TestCase):
 
 
     def modelsInstanceTest(self):
-        """This checks if user_test is instance of user"""
+        """This checks if user_test is instance of user."""
 
         self.assertIsInstance(self.my_model, BaseModel)
 

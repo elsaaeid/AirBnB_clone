@@ -22,7 +22,7 @@ class TestString(unittest.TestCase):
         style = pep8.StyleGuide(quiet=True)
         placeFile = "models/place.py"
         test_placeFile = "tests/test_models/test_place.py"
-        check = style.check_files([placeFile,test_placeFile ])
+        check = style.check_files([placeFile, test_placeFile])
         self.assertEqual(check.total_errors, 0,
                          "Found code style has errors (warning).")
 

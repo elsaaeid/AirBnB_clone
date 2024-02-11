@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
             print(my_list)
 
     def do_update(self, arg):
-        """this updates the instances based on class name and id"""
+        """This updates the instances based on class name and id"""
 
         my_arg = shlex.split(arg)
         if len(my_arg) == 0:

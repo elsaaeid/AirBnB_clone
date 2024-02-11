@@ -11,7 +11,7 @@ class BaseModel:
     """This is basemodel for AirBnB project and all classes
                                      will inherit from it"""
     def __init__(self, *args, **kwargs):
-        """this is initialization of instance attributes.
+        """This is initialization of instance attributes.
             *args: this is a list of arguments
             **kwargs: this is a dict of key-values arguments
         """

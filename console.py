@@ -302,7 +302,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_Amenity(self, arg):
-        """This sends command based on class Amenity"""
+        """This sends command based on class Amenity."""
 
         the_class = "Amenity"
         my_arg = arg.split(".")

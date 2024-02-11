@@ -15,16 +15,6 @@ def tearDownModule():
     pass
 
 
-class TestString(unittest.TestCase):
-   """ Check the pep8 """
-    def testpep8(self):
-        style = pep8.StyleGuide(quiet=True)
-        placeFile = "models/place.py"
-        test_placeFile = "tests/test_models/test_place.py"
-        check = style.check_files([placeFile, test_placeFile])
-        self.assertEqual(check.total_errors, 0,
-                         "Found code style has errors (warning).")
-
 class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
 

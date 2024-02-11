@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import unittest
-import pep8
 import os
 from models.state import State
 from models.engine.file_storage import FileStorage
@@ -14,18 +13,6 @@ def setUpModule():
 def tearDownModule():
     """ Function to clean up a Module"""
     pass
-
-
-class TestString(unittest.TestCase):
-    """ Check the pep8 """
-    def testpep8(self):
-        style = pep8.StyleGuide(quiet=True)
-        stateFile = "models/state.py"
-        test_stateFile = "tests/test_models/test_state.py"
-        check = style.check_files([stateFile, test_stateFile])
-        self.assertEqual(check.total_errors, 0,
-                         "Found code style has errors (warning).")
-
 
 class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""

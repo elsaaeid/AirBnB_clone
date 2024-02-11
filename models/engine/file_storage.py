@@ -8,6 +8,7 @@ from ..city import City
 from ..place import Place
 from ..amenity import Amenity
 from ..review import Review
+import os
 
 
 class FileStorage:

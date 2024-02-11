@@ -3,7 +3,6 @@
 """city class"""
 
 from models.base_model import BaseModel
-from models.state import state
 
 
 class City(BaseModel):

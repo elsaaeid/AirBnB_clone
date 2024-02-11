@@ -15,7 +15,7 @@ class BaseModel:
             *args: this is a list of arguments
             **kwargs: this is a dict of key-values arguments
         """
-        if len(kwargs) != 0:
+        if len(kwargs) is not 0:
             for key, values in kwargs.items():
                 if key == "id":
                     self.id = kwargs.get(key)

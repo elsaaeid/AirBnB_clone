@@ -40,7 +40,9 @@ class FileStorage:
 
     def classesReload(self):
         """ Returns a dictionary of valid classes and their references """
-        classesReload = {"BaseModel": BaseModel,"User": User,"State": State, "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
+        classesReload = {"BaseModel": BaseModel, "User": User,
+                "State": State, "City": City, "Amenity": Amenity,
+                "Place": Place, "Review": Review}
         return classesReload
 
     def reload(self):

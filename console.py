@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
 
     def do_all(self, arg):
-        """this shows all instances based on class name"""
+        """this shows all instances based on class name."""
 
         my_arg = arg.split(" ")
         if not arg:

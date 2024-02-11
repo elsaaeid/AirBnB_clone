@@ -23,8 +23,8 @@ class TestModels(unittest.TestCase):
     def setUp(self):
         """This sets a variable."""
 
-        self.city_1 = City()
-        self.city_1.state_id = "100"
+        self.city_test = City()
+        self.city_test.state_id = "100"
         print("setUp")
 
     def tearDown(self):

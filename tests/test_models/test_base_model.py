@@ -18,6 +18,7 @@ def tearDownModule():
 
 
 class TestModels(unittest.TestCase):
+    """this is a unittests of testing instantiation of BaseModel class"""
 
     def setUp(self):
         """This sets a variable."""
@@ -93,6 +94,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(self.my_model, BaseModel)
 
     def modelsToDictTest(self):
+        """test the to_dict method of the BaseModel class"""
 
         model_dict = self.my_model.to_dict()
         self.assertIsInstance(model_dict["created_at"], str)

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""this script shows the base model"""
+"""This script shows the base model"""
 
 from uuid import uuid4
 from datetime import datetime
@@ -8,7 +8,7 @@ import models
 
 
 class BaseModel:
-    """this is basemodel for AirBnB project and all classes
+    """This is basemodel for AirBnB project and all classes
                                      will inherit from it"""
     def __init__(self, *args, **kwargs):
         """this is initialization of instance attributes.

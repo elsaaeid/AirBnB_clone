@@ -14,6 +14,7 @@ def tearDownModule():
     """It is function to delete module """
     pass
 
+
 class TestModels(unittest.TestCase):
     """ It is function to test the BaseModel."""
 
@@ -61,6 +62,8 @@ class TestModels(unittest.TestCase):
         self.assertEqual(self.amenity_test.name, 'Good')
 
     def modelsToDictTest(self):
+        """ test the to_dict method of BaseModel class"""
+
         model_dict = self.amenity_test.to_dict()
         self.assertIsInstance(model_dict["created_at"], str)
         self.assertIsInstance(model_dict["updated_at"], str)

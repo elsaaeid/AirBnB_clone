@@ -15,21 +15,6 @@ def tearDownModule():
     """It is function to delete module """
     pass
 
-<<<<<<< HEAD
-=======
-
-class TestStringMethods(unittest.TestCase):
-    """ Check the pep8 """
-    def testpep8(self):
-        tyle = pep8.StyleGuide(quiet=True)
-        file1 = "models/amenity.py"
-        file2 = "tests/test_models/test_amenity.py"
-        check = style.check_files([file1, file2])
-        self.assertEqual(check.total_errors, 0,
-                         "Found code style errors (and warning).")
-
-
->>>>>>> 060ec482fb423274362b73e8abf413a2628a1669
 class TestModels(unittest.TestCase):
     """ It is function to test the BaseModel."""
 

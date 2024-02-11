@@ -197,7 +197,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_User(self, arg):
-        """this sends command based on class user"""
+        """this sends command based on class user."""
 
         the_class = "User"
         my_arg = arg.split(".")

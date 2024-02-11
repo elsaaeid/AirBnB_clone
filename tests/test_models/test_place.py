@@ -16,7 +16,7 @@ def tearDownModule():
 
 """ 
 class TestString(unittest.TestCase):
-    """ Check the pep8 """
+   : Check the pep8
     def testpep8(self):
         style = pep8.StyleGuide(quiet=True)
         placeFile = "models/place.py"

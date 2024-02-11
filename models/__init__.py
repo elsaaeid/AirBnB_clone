@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""initializes the file in models"""
+"""Initializes the file in models"""
 
 from models.engine.file_storage import FileStorage
 

@@ -31,7 +31,7 @@ class TestStringMethods(unittest.TestCase):
 class TestModels(unittest.TestCase):
 
     def setUp(self):
-        """This sets a variable"""
+        """This sets a variable."""
 
         self.my_model = BaseModel()
         self.my_model.my_number = 55
@@ -39,27 +39,27 @@ class TestModels(unittest.TestCase):
 
 
     def tearDown(self):
-        """This ends variable"""
+        """This ends variable."""
 
         print("tearDown")
 
 
     @classmethod
     def setUpClass(cls):
-        """This sets a class"""
+        """This sets a class."""
 
         print("setUpClass")
 
 
     @classmethod
     def tearDownClass(cls):
-        """del a class"""
+        """del a class."""
 
         print("tearDownClass")
 
 
     def modelsDocumentTest(self):
-        """This checks the documentation"""
+        """This checks the documentation."""
 
         self.assertIsNotNone(BaseModel.__doc__)
         self.assertIsNotNone(BaseModel.__init__.__doc__)
@@ -69,20 +69,20 @@ class TestModels(unittest.TestCase):
 
 
     def modelsNameTest(self):
-        """This checks if name is created"""
+        """This checks if name is created."""
 
         self.my_model.name = 'Holberton'
         self.assertEqual(self.my_model.name, 'Holberton')
 
 
     def modelsNumberTest(self):
-        """This checks if the number is created"""
+        """This checks if the number is created."""
 
         self.assertEqual(self.my_model.my_number, 55)
 
 
     def modelsExistTest(self):
-        """ This checks if the json file and methods are existed"""
+        """ This checks if the json file and methods are existed."""
 
         self.my_model.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -93,13 +93,13 @@ class TestModels(unittest.TestCase):
 
 
     def modelsNonEmptyTest(self):
-        """This checks if the json file is not empty"""
+        """This checks if the json file is not empty."""
 
         self.assertTrue('file.json')
 
 
     def modelsSaveTest(self):
-        """This checks if the save function works"""
+        """This checks if the save function works."""
 
         a = self.my_model.updated_at()
         self.my_model.save()
@@ -110,7 +110,7 @@ class TestModels(unittest.TestCase):
 
 
     def modelsInstanceTest(self):
-        """This checks if user_test is instance of user"""
+        """This checks if user_test is instance of user."""
 
         self.assertIsInstance(self.my_model, BaseModel)
 

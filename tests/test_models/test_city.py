@@ -32,10 +32,10 @@ class TestStringMethods(unittest.TestCase):
 
 
 class TestModels(unittest.TestCase):
-    """It is a function to test the BaseModel"""
+    """It is a function to test the BaseModel."""
 
     def setUp(self):
-        """This sets a variable"""
+        """This sets a variable."""
 
         self.city_1 = City()
         self.city_1.state_id = "100"
@@ -43,34 +43,34 @@ class TestModels(unittest.TestCase):
 
     
     def tearDown(self):
-        """This ends variable"""
+        """This ends variable."""
 
         print("tearDown")
 
 
     @classmethod
     def setUpClass(cls):
-        """This defines class"""
+        """This defines class."""
 
         print("setUpClass")
 
 
     @classmethod
     def tearDownClass(cls):
-        """This closes the class"""
+        """This closes the class."""
 
         print("tearDownClass")
 
 
     def cityDocumetationTest(self):
-        """This checks the documentation"""
+        """This checks the documentation."""
 
         self.assertIsNotNone(City.__doc__)
         self.assertIsNotNone(City.__init__.__doc__)
 
 
     def cityExistTest(self):
-        """This checks if the city methods exists"""
+        """This checks if the city methods exists."""
 
         self.city_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -80,7 +80,7 @@ class TestModels(unittest.TestCase):
 
 
     def cityNameTest(self):
-        """This checks if the name is created"""
+        """This checks if the name is created."""
 
         self.city_test.name = 'Paris'
         self.assertEqual(self.city_test.name, 'Paris')
@@ -96,7 +96,7 @@ class TestModels(unittest.TestCase):
 
 
     def cityInstanceTest(self):
-        """This checks if city_test is instance of City"""
+        """This checks if city_test is instance of City."""
         self.assertIsInstance(self.city_test, City)
 
 

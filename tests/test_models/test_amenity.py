@@ -30,44 +30,44 @@ class TestStringMethods(unittest.TestCase):
                               "Found code style errors (and warning).")
 
 class TestModels(unittest.TestCase):
-    """ It is function to test the BaseModel"""
+    """ It is function to test the BaseModel."""
 
     def setUp(self):
-        """This sets a variable"""
+        """This sets a variable."""
 
         self.amenity_test = Amenity()
         print("setUp")
 
 
     def tearDown(self):
-        """This ends variable"""
+        """This ends variable."""
 
         print("tearDown")
 
 
     @classmethod
     def setUpClass(cls):
-        """This defines class"""
+        """This defines class."""
 
         print("setUpClass")
 
 
     @classmethod
     def tearDownClass(cls):
-        """This closes the class"""
+        """This closes the class."""
 
         print("tearDownClass")
 
 
     def amenityDocumentTest(self):
-        """This checks the documetation"""
+        """This checks the documetation."""
 
         self.assertIsNotNone(Amenity.__doc__)
         self.assertIsNotNone(Amenity.__init__.__doc__)
 
 
     def placeCityTest(self):
-        """ This checks the amenity methods exists"""
+        """ This checks the amenity methods exists."""
 
         self.amenity_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -75,7 +75,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.amenity_test, "name"))
 
     def amenityNameTest(self):
-        """This checks if the name is created"""
+        """This checks if the name is created."""
 
         self.amenity_test.name = 'Good'
         self.assertEqual(self.amenity_test.name, 'Good')
@@ -90,7 +90,7 @@ class TestModels(unittest.TestCase):
 
 
     def amenityInstanceTest(self):
-        """This checks if amenity_test is instance of Amenity"""
+        """This checks if amenity_test is instance of Amenity."""
 
         self.assertIsInstance(self.amenity_test, Amenity)
 

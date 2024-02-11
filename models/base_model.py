@@ -15,7 +15,7 @@ class BaseModel:
             *args: this is a list of arguments
             **kwargs: this is a dict of key-values arguments
         """
-        if kwargs is not None and kwargs != {}:
+        if len(kwargs) is not 0:
             for key, values in kwargs.items():
                 if key == "id":
                     self.id = kwargs.get(key)
@@ -50,7 +50,7 @@ class BaseModel:
             """returns a dictionary which contain all keys and values
                                                         of ___dict__"""
             my_dict = self.__dict__.copy()
-            my_dict['__class__'] = self.__class__.__name__
             my_dict['created_at'] = self.created_at.isoformat()
             my_dict['updated_at'] = self.updated_at.isoformat()
+            my_dict['__class__'] = self.__class__.__name__
             return (my_dict)

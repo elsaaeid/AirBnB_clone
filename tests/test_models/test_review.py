@@ -39,6 +39,7 @@ class TestModels(unittest.TestCase):
         print("tearDownClass")
 
     def userTest(self):
+        """ Check user """
         self.assertIsNotNone(Review.__doc__)
         self.assertIsNotNone(Review.__init__.__doc__)
 

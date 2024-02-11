@@ -64,10 +64,10 @@ class TestModels(unittest.TestCase):
     def modelsToDictTest(self):
         """ test the to_dict method of BaseModel class"""
 
-        model_dict = self.amenity_test.to_dict()
-        self.assertIsInstance(model_dict["created_at"], str)
-        self.assertIsInstance(model_dict["updated_at"], str)
-        self.assertIsInstance(model_dict["id"], str)
+        my_dict = self.amenity_test.to_dict()
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
+        self.assertIsInstance(my_dict["id"], str)
 
     def amenityInstanceTest(self):
         """This checks if amenity_test is instance of Amenity."""

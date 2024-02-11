@@ -232,7 +232,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_State(self, arg):
-        """this sends command based on class Statei."""
+        """This sends command based on class Statei."""
 
         the_class = "State"
         my_arg = arg.split(".")

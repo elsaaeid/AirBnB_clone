@@ -5,6 +5,7 @@
 from models.base_model import BaseModel
 from models.state import state
 
+
 class City(BaseModel):
     """this is city class"""
     state_id = ""

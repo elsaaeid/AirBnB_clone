@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
-        """show is command used for an existing instance"""
+        """show is command used for an existing instance."""
         my_arg = arg.split(" ")
         if not arg:
             print("** class name missing **")

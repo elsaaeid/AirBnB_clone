@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """ FileStorage class """
 
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
-from models.place import Place
-from models.amenity import Amenity
-from models.review import Reviewpython3
+from ..base_model import BaseModel
+from ..user import User
+from ..state import State
+from ..city import City
+from ..place import Place
+from ..amenity import Amenity
+from ..review import Reviewpython3
 import json
 import os
 

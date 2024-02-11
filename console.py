@@ -267,7 +267,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_City(self, arg):
-        """This sends command based on class City"""
+        """This sends command based on class City."""
 
         the_class = "City"
         my_arg = arg.split(".")

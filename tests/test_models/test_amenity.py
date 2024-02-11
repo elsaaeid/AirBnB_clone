@@ -22,12 +22,13 @@ class TestStringMethods(unittest.TestCase):
     """This checks the pep8"""
 
     def testpep8(self):
-        style = pep8.StyleGuide(quiet = True)
+        style = pep8.StyleGuide(quiet=True)
         file1 = "models/amenity.py"
         file2 = "tests/test_models/test_amenity.py"
         check = style.check_files([file1, file2])
         self.assertEqual(check.total_errors, 0,
-                              "Found code style errors (and warning).")
+                         "Found code style errors (and warning).")
+
 
 class TestModels(unittest.TestCase):
     """ It is function to test the BaseModel."""
@@ -38,12 +39,10 @@ class TestModels(unittest.TestCase):
         self.amenity_test = Amenity()
         print("setUp")
 
-
     def tearDown(self):
         """This ends variable."""
 
         print("tearDown")
-
 
     @classmethod
     def setUpClass(cls):
@@ -51,20 +50,17 @@ class TestModels(unittest.TestCase):
 
         print("setUpClass")
 
-
     @classmethod
     def tearDownClass(cls):
         """This closes the class."""
 
         print("tearDownClass")
 
-
     def amenityDocumentTest(self):
         """This checks the documetation."""
 
         self.assertIsNotNone(Amenity.__doc__)
         self.assertIsNotNone(Amenity.__init__.__doc__)
-
 
     def placeCityTest(self):
         """ This checks the amenity methods exists."""
@@ -80,20 +76,17 @@ class TestModels(unittest.TestCase):
         self.amenity_test.name = 'Good'
         self.assertEqual(self.amenity_test.name, 'Good')
 
-
     def modelsToDictTest(self):
-        
         model_dict = self.amenity_test.to_dict()
         self.assertIsInstance(model_dict["created_at"], str)
         self.assertIsInstance(model_dict["updated_at"], str)
         self.assertIsInstance(model_dict["id"], str)
-
 
     def amenityInstanceTest(self):
         """This checks if amenity_test is instance of Amenity."""
 
         self.assertIsInstance(self.amenity_test, Amenity)
 
+
 if __name__ == '__main__':
     unittest.main()
-

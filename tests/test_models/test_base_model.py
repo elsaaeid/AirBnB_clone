@@ -6,7 +6,6 @@ from models.__init__ import storage
 from models.base_model import BaseModel
 
 
-
 def setUpModule():
     """ """
     pass
@@ -96,11 +95,11 @@ class TestModels(unittest.TestCase):
     def modelsToDictTest(self):
         """test the to_dict method of the BaseModel class"""
 
-        model_dict = self.my_model.to_dict()
-        self.assertIsInstance(model_dict["created_at"], str)
-        self.assertIsInstance(model_dict["updated_at"], str)
-        self.assertIsInstance(model_dict["my_number"], int)
-        self.assertIsInstance(model_dict["id"], str)
+        my_dict = self.my_model.to_dict()
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
+        self.assertIsInstance(my_dict["my_number"], int)
+        self.assertIsInstance(my_dict["id"], str)
 
 
 if __name__ == '__main__':

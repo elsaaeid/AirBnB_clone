@@ -12,6 +12,7 @@ def setUpModule():
     """ """
     pass
 
+
 def tearDownModule():
     """ """
     pass
@@ -21,12 +22,13 @@ class TestStringMethods(unittest.TestCase):
     """This will check the pep8."""
 
     def testpep8(self):
-        style = pep8.StyleGuide(quiet = True)
+        style = pep8.StyleGuide(quiet=True)
         file1 = "models/base_model.py"
         file2 = "tests/test_models/test_base_model.py"
         check = style.check_files([file1, file2])
-        self.assertEqual(check.total_errors, 0, 
-                              "Found code style errors (and warning).")
+        self.assertEqual(check.total_errors, 0,
+                         "Found code style errors (and warning).")
+
 
 class TestModels(unittest.TestCase):
 
@@ -37,12 +39,10 @@ class TestModels(unittest.TestCase):
         self.my_model.my_number = 55
         print("setUp")
 
-
     def tearDown(self):
         """This ends variable."""
 
         print("tearDown")
-
 
     @classmethod
     def setUpClass(cls):
@@ -50,13 +50,11 @@ class TestModels(unittest.TestCase):
 
         print("setUpClass")
 
-
     @classmethod
     def tearDownClass(cls):
         """del a class."""
 
         print("tearDownClass")
-
 
     def modelsDocumentTest(self):
         """This checks the documentation."""
@@ -67,19 +65,16 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(BaseModel.__str__.__doc__)
         self.assertIsNotNone(BaseModel.to_dict.__doc__)
 
-
     def modelsNameTest(self):
         """This checks if name is created."""
 
         self.my_model.name = 'Holberton'
         self.assertEqual(self.my_model.name, 'Holberton')
 
-
     def modelsNumberTest(self):
         """This checks if the number is created."""
 
         self.assertEqual(self.my_model.my_number, 55)
-
 
     def modelsExistTest(self):
         """ This checks if the json file and methods are existed."""
@@ -91,12 +86,10 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.my_model, "save"))
         self.assertTrue(hasattr(self.my_model, "to_dict"))
 
-
     def modelsNonEmptyTest(self):
         """This checks if the json file is not empty."""
 
         self.assertTrue('file.json')
-
 
     def modelsSaveTest(self):
         """This checks if the save function works."""
@@ -105,15 +98,12 @@ class TestModels(unittest.TestCase):
         self.my_model.save()
         self.assertNotEqual(a, self.my_model.update_at)
         self.assertNotEqual(self.my_model.created_at,
-                                         self.my_model.updated_at)
-
-
+                            self.my_model.updated_at)
 
     def modelsInstanceTest(self):
         """This checks if user_test is instance of user."""
 
         self.assertIsInstance(self.my_model, BaseModel)
-
 
     def modelsToDictTest(self):
 
@@ -126,4 +116,3 @@ class TestModels(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

@@ -142,7 +142,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_count(self, arg):
-        """this counts all instances based on class name"""
+        """this counts all instances based on class name."""
         count = 0
         my_arg = arg.split(" ")
         if not arg:

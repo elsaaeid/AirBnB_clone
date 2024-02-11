@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import unittest
-import pep8
 import os
 from models.city import City
 from models.engine.file_storage import FileStorage

@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import unittest
-import pep8
 import os
 from models.__init__ import storage
 from models.base_model import BaseModel

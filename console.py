@@ -44,8 +44,9 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             print("** class name missing **")
         elif arg in my_class:
-            for key == arg:
-                new_instance = my_class[key]()
+            for key, value in my_class.items():
+                if key == arg:
+                    new_instance = my_class[key]()
             storage.save()
             print(new_instance.id)
         else:
@@ -155,6 +156,7 @@ class HBNBCommand(cmd.Cmd):
             my_list = []
             my_objects = FileStorage.all(self)
             for key, values in my_objects.items():
+                my_key = key.split(".")
                 if my_key[0] == my_arg[0]:
                     count += 1
             print(count)

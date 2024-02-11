@@ -95,5 +95,6 @@ class TestModels(unittest.TestCase):
         """ Check if user is instance of User """
         self.assertIsInstance(self.user_test, User)
 
+
 if __name__ == '__main__':
     unittest.main()

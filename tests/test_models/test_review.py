@@ -75,5 +75,6 @@ class TestModels(unittest.TestCase):
         """ Check if review is instance of Review """
         self.assertIsInstance(self.review_test, Review)
 
+
 if __name__ == '__main__':
     unittest.main()

@@ -77,5 +77,6 @@ class TestModels(unittest.TestCase):
         """ Check if state is instance of State """
         self.assertIsInstance(self.state_test, State)
 
+
 if __name__ == '__main__':
     unittest.main()

@@ -23,12 +23,12 @@ class TestStringMethods(unittest.TestCase):
     """This checks the pep8"""
 
     def testpep8(self):
-        style = pep8.StyleGuide(quiet = True)
+        style = pep8.StyleGuide(quiet=True)
         file1 = "models/city.py"
         file2 = "tests/test_models/test_city.py"
         check = style.check_files([file1, file2])
         self.assertEqual(check.total_errors, 0,
-                              "Found code style errors (and warning).")
+                         "Found code style errors (and warning).")
 
 
 class TestModels(unittest.TestCase):
@@ -41,12 +41,10 @@ class TestModels(unittest.TestCase):
         self.city_1.state_id = "100"
         print("setUp")
 
-    
     def tearDown(self):
         """This ends variable."""
 
         print("tearDown")
-
 
     @classmethod
     def setUpClass(cls):
@@ -54,20 +52,17 @@ class TestModels(unittest.TestCase):
 
         print("setUpClass")
 
-
     @classmethod
     def tearDownClass(cls):
         """This closes the class."""
 
         print("tearDownClass")
 
-
     def cityDocumetationTest(self):
         """This checks the documentation."""
 
         self.assertIsNotNone(City.__doc__)
         self.assertIsNotNone(City.__init__.__doc__)
-
 
     def cityExistTest(self):
         """This checks if the city methods exists."""
@@ -78,13 +73,11 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.city_test, "state_id"))
         self.assertTrue(hasattr(self.city_test, "name"))
 
-
     def cityNameTest(self):
         """This checks if the name is created."""
 
         self.city_test.name = 'Paris'
         self.assertEqual(self.city_test.name, 'Paris')
-
 
     def modelsToDictTest(self):
 
@@ -93,7 +86,6 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(model_dict["updated_at"], str)
         self.assertIsInstance(model_dict["state_id"], str)
         self.assertIsInstance(model_dict["id"], str)
-
 
     def cityInstanceTest(self):
         """This checks if city_test is instance of City."""

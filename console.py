@@ -162,7 +162,7 @@ class HBNBCommand(cmd.Cmd):
             print(count)
 
     def do_BaseModel(self, arg):
-        """This sends command based on class BaseModel"""
+        """This sends command based on class BaseModel."""
 
         the_class = "BaseModel"
         my_arg = arg.split(".")

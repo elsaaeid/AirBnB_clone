@@ -265,7 +265,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_City(self, arg):
-        'this sends command based on class City'
+        'This sends command based on class City'
 
         the_class = "City"
         my_arg = arg.split(".")
@@ -300,7 +300,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_Amenity(self, arg):
-        'this sends command based on class Amenity'
+        'This sends command based on class Amenity'
 
         the_class = "Amenity"
         my_arg = arg.split(".")

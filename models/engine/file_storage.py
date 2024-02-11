@@ -7,7 +7,7 @@ from ..state import State
 from ..city import City
 from ..place import Place
 from ..amenity import Amenity
-from ..review import Reviewpython3
+from ..review import Review
 import json
 import os
 

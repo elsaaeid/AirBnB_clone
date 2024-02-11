@@ -40,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """create is command used to create a new instance"""
+        """create is command used to create a new instance."""
         if not arg:
             print("** class name missing **")
         elif arg in classes:

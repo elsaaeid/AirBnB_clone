@@ -25,22 +25,22 @@ class HBNBCommand(cmd.Cmd):
 
     """this class for the command interpreter"""
 
-    prompt = '(hbnb) '
+    prompt = "(hbnb) "
     file = None
 
     def do_EOF(self, arg):
-        'EOF is command used to exit the program'
+        """EOF is command used to exit the program"""
         return True
 
     def do_quit(self, arg):
-        'quit is command used to exit the program'
+        """quit is command used to exit the program"""
         return True
 
     def emptyline(self):
         pass
 
     def do_create(self, arg):
-        'create is command used to create a new instance'
+        """create is command used to create a new instance"""
         if not arg:
             print("** class name missing **")
         elif arg in my_class:
@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
-        'show is command used for an existing instance'
+        """show is command used for an existing instance"""
         my_arg = arg.split(" ")
         if not arg:
             print("** class name missing **")
@@ -74,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
 
     def do_destroy(self, arg):
-        'this deletes an instance based on class and id'
+        """this deletes an instance based on class and id"""
 
         my_arg = arg.split(" ")
         if not arg:
@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
 
     def do_all(self, arg):
-        'this shows all instances based on class name'
+        """this shows all instances based on class name"""
 
         my_arg = arg.split(" ")
         if not arg:
@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
             print(my_list)
 
     def do_update(self, arg):
-        'this updates the instances based on class name and id'
+        """this updates the instances based on class name and id"""
 
         my_arg = shlex.split(arg)
         if len(my_arg) == 0:
@@ -142,7 +142,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_count(self, arg):
-        'this counts all instances based on class name'
+        """this counts all instances based on class name"""
         count = 0
         my_arg = arg.split(" ")
         if not arg:
@@ -162,7 +162,7 @@ class HBNBCommand(cmd.Cmd):
             print(count)
 
     def do_BaseModel(self, arg):
-        'this sends command based on class BaseModel'
+        """this sends command based on class BaseModel"""
 
         the_class = "BaseModel"
         my_arg = arg.split(".")
@@ -197,7 +197,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_User(self, arg):
-        'this sends command based on class user'
+        """this sends command based on class user"""
 
         the_class = "User"
         my_arg = arg.split(".")
@@ -232,7 +232,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_State(self, arg):
-        'this sends command based on class State'
+        """this sends command based on class State"""
 
         the_class = "State"
         my_arg = arg.split(".")
@@ -267,7 +267,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_City(self, arg):
-        'This sends command based on class City'
+        """This sends command based on class City"""
 
         the_class = "City"
         my_arg = arg.split(".")
@@ -302,7 +302,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_Amenity(self, arg):
-        'This sends command based on class Amenity'
+        """This sends command based on class Amenity"""
 
         the_class = "Amenity"
         my_arg = arg.split(".")
@@ -337,7 +337,7 @@ class HBNBCommand(cmd.Cmd):
                 HBNBCommand.do_update(HBNBCommand, param)
 
     def do_Place(self, arg):
-        'This sends command based on class Place'
+        """This sends command based on class Place"""
 
         the_class = "Place"
         my_arg = arg.split(".")
@@ -372,7 +372,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_Review(self, arg):
-        'This sends command based on class Review'
+        """This sends command based on class Review"""
 
         the_class = "Review"
         my_arg = arg.split(".")

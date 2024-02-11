@@ -5,7 +5,6 @@ import os
 from models.city import City
 
 
-
 def setUpModule():
     """It is a function to set a module"""
 
@@ -67,6 +66,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(self.city_test.name, 'Paris')
 
     def modelsToDictTest(self):
+        """test the to_dict method of BaseModel class"""
 
         model_dict = self.city_test.to_dict()
         self.assertIsInstance(model_dict["created_at"], str)

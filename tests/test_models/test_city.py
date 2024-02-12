@@ -23,8 +23,8 @@ class TestModels(unittest.TestCase):
     def setUp(self):
         """This sets a variable."""
 
-        self.city_1 = City()
-        self.city_1.state_id = "100"
+        self.city_test = City()
+        self.city_test.state_id = "100"
         print("setUp")
 
     def tearDown(self):
@@ -68,11 +68,11 @@ class TestModels(unittest.TestCase):
     def modelsToDictTest(self):
         """test the to_dict method of BaseModel class"""
 
-        model_dict = self.city_test.to_dict()
-        self.assertIsInstance(model_dict["created_at"], str)
-        self.assertIsInstance(model_dict["updated_at"], str)
-        self.assertIsInstance(model_dict["state_id"], str)
-        self.assertIsInstance(model_dict["id"], str)
+        my_dict = self.city_test.to_dict()
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
+        self.assertIsInstance(my_dict["state_id"], str)
+        self.assertIsInstance(my_dict["id"], str)
 
     def cityInstanceTest(self):
         """This checks if city_test is instance of City."""

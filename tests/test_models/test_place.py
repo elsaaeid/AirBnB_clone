@@ -43,7 +43,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(Place.__doc__)
         self.assertIsNotNone(Place.__init__.__doc__)
 
-    def place_cityTest(self):
+    def placeCityTest(self):
         """ Check if the city name is create """
         self.place_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -60,7 +60,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.place_test, "longitude"))
         self.assertTrue(hasattr(self.place_test, "amenity_ids"))
 
-    def models_to_dictTest(self):
+    def modelToDictTest(self):
         """ Check converting to dict """
         my_dict = self.place_test.to_dict()
         self.assertIsInstance(my_dict["created_at"], str)
@@ -69,7 +69,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(my_dict["longitude"], float)
         self.assertIsInstance(my_dict["id"], str)
 
-    def place_is_instanceTest(self):
+    def placeIsInstanceTest(self):
         """ Check if place_test is instance of Place """
         self.assertIsInstance(self.place_test, Place)
 

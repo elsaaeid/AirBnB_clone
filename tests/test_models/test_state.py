@@ -44,25 +44,25 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(State.__doc__)
         self.assertIsNotNone(State.__init__.__doc__)
 
-    def place_cityTest(self):
+    def placeCityTest(self):
         """ Check if the state methods exist """
         self.state_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.state_test, "__init__"))
         self.assertTrue(hasattr(self.state_test, "name"))
 
-    def amenity_nameTest(self):
+    def amenityNameTest(self):
         """ Check if the name is create """
         self.state_test.name = 'Good'
         self.assertEqual(self.state_test.name, 'Good')
 
-    def models_to_dictTest(self):
+    def modelsToDictTest(self):
         """ Check the converting to dict """
         my_dict = self.state_test.to_dict()
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
 
-    def amenity_instanceTest(self):
+    def amenityInstanceTest(self):
         """ Check if state_test is instance of State """
         self.assertIsInstance(self.my_dict, State)
 

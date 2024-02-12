@@ -15,7 +15,7 @@ from models.amenity import Amenity
 from models.review import Review
 import json
 
-my_class = {"BaseModel": BaseModel, "User": User,
+classes = {"BaseModel": BaseModel, "User": User,
             "State": State, "City": City,
             "Place": Place, "Amenity": Amenity,
             "Review":  Review}
@@ -43,10 +43,10 @@ class HBNBCommand(cmd.Cmd):
         """create is command used to create a new instance"""
         if not arg:
             print("** class name missing **")
-        elif arg in my_class:
-            for key, value in my_class.items():
+        elif arg in classes:
+            for key, value in classes.items():
                 if key == arg:
-                    new_instance = my_class[key]()
+                    new_instance = classes[key]()
             storage.save()
             print(new_instance.id)
         else:
@@ -57,7 +57,7 @@ class HBNBCommand(cmd.Cmd):
         my_arg = arg.split(" ")
         if not arg:
             print("** class name missing **")
-        elif my_arg[0] not in my_class:
+        elif my_arg[0] not in classes:
             print("** class doesn't exist **")
         elif len(my_arg) >= 1:
             try:
@@ -79,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
         my_arg = arg.split(" ")
         if not arg:
             print("** class name missing **")
-        elif my_arg[0] not in my_class:
+        elif my_arg[0] not in clasess:
             print("** class doesn't exist **")
         elif len(my_arg) >= 1:
             try:
@@ -103,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
             for key, values in my_objects.items():
                 my_list.append(str(values))
             print(my_list)
-        elif my_arg[0] not in my_class:
+        elif my_arg[0] not in classes:
             print("** class doesn't exist **")
         else:
             my_list = []
@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
             print("** attribute name missing **")
         elif len(my_arg) == 3:
             print("** value missing **")
-        elif my_arg[0] not in my_class:
+        elif my_arg[0] not in classes:
             print("** class doesn't exist **")
         else:
             my_objects = FileStorage.all(self)
@@ -150,7 +150,7 @@ class HBNBCommand(cmd.Cmd):
             for key, values in my_objects.items():
                 my_list.append(str(values))
             print(my_list)
-        elif my_arg[0] not in my_class:
+        elif my_arg[0] not in classes:
             print("** class doesn't exist **")
         else:
             my_list = []

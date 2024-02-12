@@ -162,7 +162,7 @@ class HBNBCommand(cmd.Cmd):
             print(count)
 
     def do_BaseModel(self, arg):
-        """this sends command based on class BaseModel"""
+        """This sends command based on class BaseModel"""
 
         the_class = "BaseModel"
         my_arg = arg.split(".")
@@ -197,7 +197,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_User(self, arg):
-        """this sends command based on class user"""
+        """This sends command based on class user."""
 
         the_class = "User"
         my_arg = arg.split(".")
@@ -232,7 +232,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_State(self, arg):
-        """this sends command based on class State"""
+        """This sends command based on class Statei."""
 
         the_class = "State"
         my_arg = arg.split(".")
@@ -267,7 +267,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_City(self, arg):
-        """This sends command based on class City"""
+        """This sends command based on class City."""
 
         the_class = "City"
         my_arg = arg.split(".")
@@ -302,7 +302,7 @@ class HBNBCommand(cmd.Cmd):
                     HBNBCommand.do_update(HBNBCommand, param)
 
     def do_Amenity(self, arg):
-        """This sends command based on class Amenity"""
+        """This sends command based on class Amenity."""
 
         the_class = "Amenity"
         my_arg = arg.split(".")
@@ -337,7 +337,7 @@ class HBNBCommand(cmd.Cmd):
                 HBNBCommand.do_update(HBNBCommand, param)
 
     def do_Place(self, arg):
-        """This sends command based on class Place"""
+        """This sends command based on class Placei."""
 
         the_class = "Place"
         my_arg = arg.split(".")

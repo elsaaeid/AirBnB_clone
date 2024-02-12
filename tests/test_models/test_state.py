@@ -39,29 +39,29 @@ class TestModels(unittest.TestCase):
         """ close the class """
         print("tearDownClass")
 
-    def test_amenity_doc(self):
+    def amenityTest(self):
         """ Check the documentation """
         self.assertIsNotNone(State.__doc__)
         self.assertIsNotNone(State.__init__.__doc__)
 
-    def test_place_city(self):
+    def place_cityTest(self):
         """ check if the state methods exists """
         self.state_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.state_test, "__init__"))
         self.assertTrue(hasattr(self.state_test, "name"))
 
-    def test_amenity_name(self):
+    def amenity_nameTest(self):
         """ check if the name is create """
         self.state_test.name = 'Good'
         self.assertEqual(self.state_test.name, 'Good')
 
-    def test_models_to_dict(self):
+    def models_to_dictTest(self):
         my_dict = self.state_test.to_dict()
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
 
-    def test_amenity_instance(self):
+    def amenity_instanceTest(self):
         """ check if state_test is instance of State """
         self.assertIsInstance(self.my_dict, State)
 

@@ -14,9 +14,6 @@ def tearDownModule():
     """ Function to delete a Module"""
     pass
 
-
-
-
 class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
 

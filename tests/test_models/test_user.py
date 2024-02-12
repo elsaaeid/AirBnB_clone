@@ -61,7 +61,7 @@ class TestModels(unittest.TestCase):
         """ Check if the name is create """
         self.assertEqual(self.user_test.name, 'Said')
 
-    def userLastnameTest(self):
+    def userLastNameTest(self):
         """ Chaeck if the lastname is create """
         self.assertEqual(self.user_test.lastname, "Ellithy")
 

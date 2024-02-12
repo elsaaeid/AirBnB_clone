@@ -20,23 +20,23 @@ class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
 
     def setUp(self):
-        """ Set a variable """
+        """ Set up a variable """
         self.state_test = State()
         print("setUp")
 
     def tearDown(self):
-        """ End variable """
+        """ Clean variable """
         print("tearDown")
 
     @classmethod
     def setUpClass(cls):
-        """ define class """
+        """ Set class """
 
         print("setUpClass")
 
     @classmethod
     def tearDownClass(cls):
-        """ close the class """
+        """ Clean the class """
         print("tearDownClass")
 
     def amenityTest(self):
@@ -45,24 +45,25 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(State.__init__.__doc__)
 
     def place_cityTest(self):
-        """ check if the state methods exists """
+        """ Check if the state methods exists """
         self.state_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.state_test, "__init__"))
         self.assertTrue(hasattr(self.state_test, "name"))
 
     def amenity_nameTest(self):
-        """ check if the name is create """
+        """ Check if the name is create """
         self.state_test.name = 'Good'
         self.assertEqual(self.state_test.name, 'Good')
 
     def models_to_dictTest(self):
+        """ Check the converting to dict """
         my_dict = self.state_test.to_dict()
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
 
     def amenity_instanceTest(self):
-        """ check if state_test is instance of State """
+        """ Check if state_test is instance of State """
         self.assertIsInstance(self.my_dict, State)
 
 if __name__ == '__main__':

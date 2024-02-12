@@ -75,11 +75,11 @@ class TestModels(unittest.TestCase):
 
     def modelsToDictTest(self):
         """ Check if models converted to dictionary """
-        model_dict = self.user_test.to_dict()
-        self.assertIsInstance(model_dict["id"], str)
-        self.assertIsInstance(model_dict["email"], str)
-        self.assertIsInstance(model_dict["created_at"], str)
-        self.assertIsInstance(model_dict["updated_at"], str)
+        my_dict = self.user_test.to_dict()
+        self.assertIsInstance(my_dict["id"], str)
+        self.assertIsInstance(my_dict["email"], str)
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
 
     def userInstanceTest(self):
         """ Check if user is instance of User """

@@ -56,9 +56,9 @@ class TestModels(unittest.TestCase):
 
     def modelsToDictTest(self):
         """ Check if models converted to dictionary """
-        model_dict = self.state_file.to_dict()
-        self.assertIsInstance(model_dict["created_at"], str)
-        self.assertIsInstance(model_dict["updated_at"], str)
+        my_dict = self.state_file.to_dict()
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
 
     def stateInstanceTest(self):
         """ Check if state is instance of State """

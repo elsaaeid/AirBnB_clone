@@ -63,12 +63,12 @@ class TestModels(unittest.TestCase):
 
     def modelsToDictTest(self):
         """ Check if models converted to dictionary """
-        models_dict = self.place_test.to_dict()
-        self.assertIsInstance(models_dict["id"], str)
-        self.assertIsInstance(models_dict["created_at"], str)
-        self.assertIsInstance(models_dict["updated_at"], str)
-        self.assertIsInstance(models_dict["number_bathrooms"], int)
-        self.assertIsInstance(models_dict["longitude"], float)
+        my_dict = self.place_test.to_dict()
+        self.assertIsInstance(my_dict["id"], str)
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
+        self.assertIsInstance(my_dict["number_bathrooms"], int)
+        self.assertIsInstance(my_dict["longitude"], float)
 
     def placeIsInstanceTest(self):
         """ Check if place is instance of Place """

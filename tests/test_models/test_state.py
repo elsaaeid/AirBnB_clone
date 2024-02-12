@@ -52,7 +52,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.state_test, "name"))
 
     def stateNameTest(self):
-        """ Check if the name is create """
+        """ Check if the state name is created """
         self.state_test.name = 'Great'
         self.assertEqual(self.state_test.name, 'Great')
 

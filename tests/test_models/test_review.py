@@ -35,10 +35,11 @@ class TestModels(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """ Close the class """
+        """ Clean the class """
         print("tearDownClass")
 
-    def userTest(self):
+    def reviewTest(self):
+        """ Check the review """
         self.assertIsNotNone(Review.__doc__)
         self.assertIsNotNone(Review.__init__.__doc__)
 
@@ -59,7 +60,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(my_dict["user_id"], str)
         self.assertIsInstance(my_dict["id"], str)
 
-    def userInstanceTest(self):
+    def reviewInstanceTest(self):
         """ Check if review_test is instance of Review """
         self.assertIsInstance(self.review_test, Review)
 

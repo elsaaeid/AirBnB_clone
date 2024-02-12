@@ -45,8 +45,8 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(User.__doc__)
         self.assertIsNotNone(User.__init__.__doc__)
 
-    def placeCityTest(self):
-        """ Check if the city name is created """
+    def userPropertiesTest(self):
+        """ Check if the user properties are created """
         self.user_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.user_test, "__init__"))

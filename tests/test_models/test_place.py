@@ -43,8 +43,8 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(Place.__doc__)
         self.assertIsNotNone(Place.__init__.__doc__)
 
-    def placeCityTest(self):
-        """ Check if the city name is create """
+    def placeExistTest(self):
+        """ Check if the city name is created """
         self.place_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.place_test, "__init__"))

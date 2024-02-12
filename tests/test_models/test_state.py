@@ -39,12 +39,12 @@ class TestModels(unittest.TestCase):
         """ Clean the class """
         print("tearDownClass")
 
-    def amenityTest(self):
+    def stateTest(self):
         """ Check the documentation """
         self.assertIsNotNone(State.__doc__)
         self.assertIsNotNone(State.__init__.__doc__)
 
-    def placeCityTest(self):
+    def stateExistTest(self):
         """ Check if the state methods exist """
         self.state_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -53,8 +53,8 @@ class TestModels(unittest.TestCase):
 
     def stateNameTest(self):
         """ Check if the name is create """
-        self.state_test.name = 'Good'
-        self.assertEqual(self.state_test.name, 'Good')
+        self.state_test.name = 'Great'
+        self.assertEqual(self.state_test.name, 'Great')
 
     def modelsToDictTest(self):
         """ Check the converting to dict """

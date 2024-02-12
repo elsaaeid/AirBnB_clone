@@ -38,11 +38,11 @@ class TestModels(unittest.TestCase):
         """ close the class """
         print("tearDownClass")
 
-    def test_user_doc(self):
+    def userTest(self):
         self.assertIsNotNone(Review.__doc__)
         self.assertIsNotNone(Review.__init__.__doc__)
 
-    def test_review_exist(self):
+    def review_existTest(self):
         """ check if the methods exists """
         self.review_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -51,14 +51,14 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.review_test, "user_id"))
         self.assertTrue(hasattr(self.review_test, "place_id"))
 
-    def test_models_to_dict(self):
+    def models_to_dictTest(self):
         my_dict = self.review_test.to_dict()
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
         self.assertIsInstance(my_dict["user_id"], str)
         self.assertIsInstance(my_dict["id"], str)
 
-    def test_user_instance(self):
+    def user_instanceTest(self):
         """ check if review_test is instance of Review """
         self.assertIsInstance(self.review_test, Review)
 

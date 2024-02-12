@@ -38,12 +38,12 @@ class TestModels(unittest.TestCase):
         """ close the class """
         print("tearDownClass")
 
-    def test_place_documentation(self):
+    def placeTest(self):
         """ check documentation """
         self.assertIsNotNone(Place.__doc__)
         self.assertIsNotNone(Place.__init__.__doc__)
 
-    def test_place_city(self):
+    def place_cityTest(self):
         """ check if the city name is create """
         self.place_test.save()
         self.assertTrue(os.path.isfile('file.json'))
@@ -60,7 +60,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.place_test, "longitude"))
         self.assertTrue(hasattr(self.place_test, "amenity_ids"))
 
-    def test_models_to_dict(self):
+    def models_to_dictTest(self):
         my_dict = self.place_test.to_dict()
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
@@ -68,7 +68,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(my_dict["longitude"], float)
         self.assertIsInstance(my_dict["id"], str)
 
-    def test_place_is_instance(self):
+    def place_is_instanceTest(self):
         """ check if place_1 is instance of Place """
         self.assertIsInstance(self.place_test, Place)
 

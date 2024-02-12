@@ -42,11 +42,11 @@ class FileStorage:
 
     def classesReload(self):
         """ Returns a dictionary of valid classes and their references """
-        classesReload = {"BaseModel": BaseModel, "User": User,
+        classes = {"BaseModel": BaseModel, "User": User,
                          "State": State, "City": City,
                          "Amenity": Amenity, "Place": Place,
                          "Review": Review}
-        return classesReload
+        return classes
 
     def reload(self):
         """Reloads the stored objects"""
@@ -54,6 +54,6 @@ class FileStorage:
             return
         with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
             obj_dict = json.load(f)
-            obj_dict = {k: self.classesReload()[v["__class__"]](**v)
+            obj_dict = {k: self.classes()[v["__class__"]](**v)
                         for k, v in obj_dict.items()}
             FileStorage.__objects = obj_dict

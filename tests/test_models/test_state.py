@@ -51,7 +51,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.state_test, "__init__"))
         self.assertTrue(hasattr(self.state_test, "name"))
 
-    def amenityNameTest(self):
+    def stateNameTest(self):
         """ Check if the name is create """
         self.state_test.name = 'Good'
         self.assertEqual(self.state_test.name, 'Good')
@@ -62,7 +62,7 @@ class TestModels(unittest.TestCase):
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
 
-    def amenityInstanceTest(self):
+    def stateInstanceTest(self):
         """ Check if state_test is instance of State """
         self.assertIsInstance(self.my_dict, State)
 

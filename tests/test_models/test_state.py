@@ -6,15 +6,12 @@ from models.engine.file_storage import FileStorage
 
 
 def setUpModule():
-    """ Funtion to set a Module"""
+    """ Funtion to set up a Module"""
     pass
-
 
 def tearDownModule():
-    """ Function to delete a Module"""
+    """ Function to clean up a Module"""
     pass
-
-
 
 class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
@@ -25,18 +22,18 @@ class TestModels(unittest.TestCase):
         print("setUp")
 
     def tearDown(self):
-        """ Clean variable """
+        """ Clean up variable """
         print("tearDown")
 
     @classmethod
     def setUpClass(cls):
-        """ Set class """
+        """ Set up class """
 
         print("setUpClass")
 
     @classmethod
     def tearDownClass(cls):
-        """ Clean the class """
+        """ Clean up the class """
         print("tearDownClass")
 
     def stateTest(self):

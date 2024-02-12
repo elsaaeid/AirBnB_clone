@@ -49,7 +49,7 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(User.__init__.__doc__)
 
     def placeCityTest(self):
-        """ Check if the city name is create """
+        """ Check if the city name is created """
         self.user_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.user_test, "__init__"))
@@ -59,19 +59,19 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.user_test, "last_name"))
 
     def userNameTest(self):
-        """ Check if the name is create """
+        """ Check if the name is created """
         self.assertEqual(self.user_test.name, 'Said')
 
     def userLastNameTest(self):
-        """ Chaeck if the lastname is create """
+        """ Chaeck if the lastname is created """
         self.assertEqual(self.user_test.lastname, "Ellithy")
 
     def userEmailTest(self):
-        """ Chaeck if the email is create """
+        """ Chaeck if the email is created """
         self.assertEqual(self.user_test.email, 'saidsadaoy@gmail.com')
 
     def userPasswordTest(self):
-        """ Chaeck if the password is create """
+        """ Chaeck if the password is created """
         self.assertEqual(self.user_test.password, "root")
 
     def modelsToDictTest(self):

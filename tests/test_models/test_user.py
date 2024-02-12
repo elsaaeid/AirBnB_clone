@@ -54,7 +54,7 @@ class TestModels(unittest.TestCase):
         self.assertTrue(hasattr(self.user_test, "email"))
         self.assertTrue(hasattr(self.user_test, "password"))
 
-    def userNameTest(self):
+    def userFirstNameTest(self):
         """ Check if the first name is created """
         self.assertEqual(self.user_test.firstname, 'Said')
 

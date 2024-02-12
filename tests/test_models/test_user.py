@@ -67,7 +67,7 @@ class TestModels(unittest.TestCase):
 
     def userEmailTest(self):
         """ Check if the email was created """
-        self.assertEqual(self.user_test.email, 'saidsadaoy@gmail.com')
+        self.assertEqual(self.user_test.email, 'airbnb@mail.com')
 
     def userPasswordTest(self):
         """ Check if the password was created """

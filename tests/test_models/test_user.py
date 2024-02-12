@@ -44,6 +44,7 @@ class TestModels(unittest.TestCase):
         print("tearDownClass")
 
     def userTest(self):
+        """ Check if user exists """
         self.assertIsNotNone(User.__doc__)
         self.assertIsNotNone(User.__init__.__doc__)
 

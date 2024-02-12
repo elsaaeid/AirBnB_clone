@@ -9,9 +9,11 @@ def setUpModule():
     """ Funtion to set up a Module"""
     pass
 
+
 def tearDownModule():
     """ Function to clean up a Module"""
     pass
+
 
 class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
@@ -62,6 +64,7 @@ class TestModels(unittest.TestCase):
     def stateInstanceTest(self):
         """ Check if state_test is instance of State """
         self.assertIsInstance(self.my_dict, State)
+
 
 if __name__ == '__main__':
     unittest.main()

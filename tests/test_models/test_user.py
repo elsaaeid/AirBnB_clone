@@ -22,10 +22,10 @@ class TestModels(unittest.TestCase):
     def setUp(self):
         """ Set up a variable """
         self.user_test = User()
-        self.user_test.firstname = 'Said'
-        self.user_test.lastname = "Ellithy"
-        self.user_test.email = 'saidsadaoy@gmail.com'
-        self.user_test.password = "root"
+        self.user_test.firstname = 'Bob'
+        self.user_test.lastname = "Bar"
+        self.user_test.email = 'airbnb@mail.com'
+        self.user_test.password = "b9be11166d72e9e3ae7fd407165e4bd2"
         print("setUp")
 
     def tearDown(self):
@@ -59,11 +59,11 @@ class TestModels(unittest.TestCase):
 
     def userFirstNameTest(self):
         """ Check if the firstname was created """
-        self.assertEqual(self.user_test.firstname, 'Said')
+        self.assertEqual(self.user_test.firstname, 'Bob')
 
     def userLastNameTest(self):
         """ Check if the lastname was created """
-        self.assertEqual(self.user_test.lastname, "Ellithy")
+        self.assertEqual(self.user_test.lastname, "Bar")
 
     def userEmailTest(self):
         """ Check if the email was created """
@@ -71,7 +71,7 @@ class TestModels(unittest.TestCase):
 
     def userPasswordTest(self):
         """ Check if the password was created """
-        self.assertEqual(self.user_test.password, "root")
+        self.assertEqual(self.user_test.password, "b9be11166d72e9e3ae7fd407165e4bd2")
 
     def modelsToDictTest(self):
         """ Check if models converted to dictionary """

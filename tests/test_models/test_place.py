@@ -6,12 +6,12 @@ from models.engine.file_storage import FileStorage
 
 
 def setUpModule():
-    """ Funtion to set a Module"""
+    """ Funtion to set up a Module"""
     pass
 
 
 def tearDownModule():
-    """ Function to delete a Module"""
+    """ Function to clean up a Module"""
     pass
 
 class TestModels(unittest.TestCase):
@@ -25,7 +25,7 @@ class TestModels(unittest.TestCase):
         print("setUp")
 
     def tearDown(self):
-        """ Clean variable """
+        """ Clean up variable """
         print("tearDown")
 
     @classmethod
@@ -39,12 +39,12 @@ class TestModels(unittest.TestCase):
         print("tearDownClass")
 
     def placeTest(self):
-        """ Check documentation """
+        """ Check place documentation """
         self.assertIsNotNone(Place.__doc__)
         self.assertIsNotNone(Place.__init__.__doc__)
 
     def placeExistTest(self):
-        """ Check if the city name is created """
+        """ Check if the place properties are created """
         self.place_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.place_test, "__init__"))
@@ -63,11 +63,11 @@ class TestModels(unittest.TestCase):
     def modelToDictTest(self):
         """ Check converting to dict """
         my_dict = self.place_test.to_dict()
+        self.assertIsInstance(my_dict["id"], str)
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
         self.assertIsInstance(my_dict["number_bathrooms"], int)
         self.assertIsInstance(my_dict["longitude"], float)
-        self.assertIsInstance(my_dict["id"], str)
 
     def placeIsInstanceTest(self):
         """ Check if place_test is instance of Place """

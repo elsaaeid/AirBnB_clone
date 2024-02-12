@@ -6,12 +6,11 @@ from models.engine.file_storage import FileStorage
 
 
 def setUpModule():
-    """ Funtion to set a Module"""
+    """ Funtion to set up a Module"""
     pass
 
-
 def tearDownModule():
-    """ Function to delete a Module"""
+    """ Function to clean up a Module"""
     pass
 
 class TestModels(unittest.TestCase):
@@ -20,7 +19,7 @@ class TestModels(unittest.TestCase):
     def setUp(self):
         """ Set up a variable """
         self.user_test = User()
-        self.user_test.name = 'Said'
+        self.user_test.firstname = 'Said'
         self.user_test.lastname = "Ellithy"
         self.user_test.email = 'saidsadaoy@gmail.com'
         self.user_test.password = "root"
@@ -50,17 +49,17 @@ class TestModels(unittest.TestCase):
         self.user_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.user_test, "__init__"))
-        self.assertTrue(hasattr(self.user_test, "email"))
-        self.assertTrue(hasattr(self.user_test, "password"))
         self.assertTrue(hasattr(self.user_test, "first_name"))
         self.assertTrue(hasattr(self.user_test, "last_name"))
+        self.assertTrue(hasattr(self.user_test, "email"))
+        self.assertTrue(hasattr(self.user_test, "password"))
 
     def userNameTest(self):
-        """ Check if the name is created """
-        self.assertEqual(self.user_test.name, 'Said')
+        """ Check if the first name is created """
+        self.assertEqual(self.user_test.firstname, 'Said')
 
     def userLastNameTest(self):
-        """ Chaeck if the lastname is created """
+        """ Chaeck if the last name is created """
         self.assertEqual(self.user_test.lastname, "Ellithy")
 
     def userEmailTest(self):
@@ -74,10 +73,10 @@ class TestModels(unittest.TestCase):
     def modelsToDictTest(self):
         """ Check the converting to dict """
         my_dict = self.user_test.to_dict()
+        self.assertIsInstance(my_dict["id"], str)
+        self.assertIsInstance(my_dict["email"], str)
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
-        self.assertIsInstance(my_dict["email"], str)
-        self.assertIsInstance(my_dict["id"], str)
 
     def userInstanceTest(self):
         """ Check if user_test is instance of User """

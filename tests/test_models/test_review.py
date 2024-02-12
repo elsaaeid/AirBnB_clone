@@ -6,18 +6,17 @@ from models.engine.file_storage import FileStorage
 
 
 def setUpModule():
-    """ Funtion to set a Module"""
+    """ Funtion to set up a Module"""
     pass
 
 
 def tearDownModule():
-    """ Function to delete a Module"""
+    """ Function to clean up a Module"""
     pass
 
 
 class TestModels(unittest.TestCase):
-    """ Funtion to test the BaseModel"""
-
+    """ Funtion to test the BaseModel """
     def setUp(self):
         """ Set up a variable """
         self.review_test = Review()
@@ -25,7 +24,7 @@ class TestModels(unittest.TestCase):
         print("setUp")
 
     def tearDown(self):
-        """ Clean variable """
+        """ Clean up variable """
         print("tearDown")
 
     @classmethod
@@ -35,16 +34,16 @@ class TestModels(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """ Clean the class """
+        """ Clean up the class """
         print("tearDownClass")
 
     def reviewTest(self):
-        """ Check the review """
+        """ Check the review documentation """
         self.assertIsNotNone(Review.__doc__)
         self.assertIsNotNone(Review.__init__.__doc__)
 
     def reviewExistTest(self):
-        """ Check if the methods exist """
+        """ Check if the review exists """
         self.review_test.save()
         self.assertTrue(os.path.isfile('file.json'))
         self.assertTrue(hasattr(self.review_test, "__init__"))
@@ -55,10 +54,10 @@ class TestModels(unittest.TestCase):
     def modelsToDictTest(self):
         """ Check the converting to dict """
         my_dict = self.review_test.to_dict()
+        self.assertIsInstance(my_dict["id"], str)
+        self.assertIsInstance(my_dict["user_id"], str)
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)
-        self.assertIsInstance(my_dict["user_id"], str)
-        self.assertIsInstance(my_dict["id"], str)
 
     def reviewInstanceTest(self):
         """ Check if review_test is instance of Review """

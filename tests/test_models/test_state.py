@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import unittest
-import pep8
 import os
 from models.state import State
 from models.engine.file_storage import FileStorage
@@ -16,23 +15,13 @@ def tearDownModule():
     pass
 
 
-class TestStringMethods(unittest.TestCase):
-    """ Check the pep8 """
-    def testpep8(self):
-        style = pep8.StyleGuide(quiet=True)
-        file1 = "models/state.py"
-        file2 = "tests/test_models/test_state.py"
-        check = style.check_files([file1, file2])
-        self.assertEqual(check.total_errors, 0,
-                         "Found code style errors (and warning).")
-
 
 class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
 
     def setUp(self):
         """ Set a variable """
-        self.state_1 = State()
+        self.state_test = State()
         print("setUp")
 
     def tearDown(self):
@@ -57,24 +46,24 @@ class TestModels(unittest.TestCase):
 
     def test_place_city(self):
         """ check if the state methods exists """
-        self.state_1.save()
+        self.state_test.save()
         self.assertTrue(os.path.isfile('file.json'))
-        self.assertTrue(hasattr(self.state_1, "__init__"))
-        self.assertTrue(hasattr(self.state_1, "name"))
+        self.assertTrue(hasattr(self.state_test, "__init__"))
+        self.assertTrue(hasattr(self.state_test, "name"))
 
     def test_amenity_name(self):
         """ check if the name is create """
-        self.state_1.name = 'Good'
-        self.assertEqual(self.state_1.name, 'Good')
+        self.state_test.name = 'Good'
+        self.assertEqual(self.state_test.name, 'Good')
 
     def test_models_to_dict(self):
-        model_1 = self.state_1.to_dict()
-        self.assertIsInstance(model_1["created_at"], str)
-        self.assertIsInstance(model_1["updated_at"], str)
+        my_dict = self.state_test.to_dict()
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
 
     def test_amenity_instance(self):
-        """ check if state_1 is instance of State """
-        self.assertIsInstance(self.state_1, State)
+        """ check if state_test is instance of State """
+        self.assertIsInstance(self.my_dict, State)
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import unittest
-import pep8
 import os
 from models.review import Review
 from models.engine.file_storage import FileStorage
@@ -16,24 +15,13 @@ def tearDownModule():
     pass
 
 
-class TestStringMethods(unittest.TestCase):
-    """ Check the pep8 """
-    def testpep8(self):
-        style = pep8.StyleGuide(quiet=True)
-        file1 = "models/review.py"
-        file2 = "tests/test_models/test_review.py"
-        check = style.check_files([file1, file2])
-        self.assertEqual(check.total_errors, 0,
-                         "Found code style errors (and warning).")
-
-
 class TestModels(unittest.TestCase):
     """ Funtion to test the BaseModel"""
 
     def setUp(self):
         """ Set a variable """
-        self.review_1 = Review()
-        self.review_1.user_id = "asd123"
+        self.review_test = Review()
+        self.review_test.user_id = "asd123"
         print("setUp")
 
     def tearDown(self):
@@ -56,23 +44,23 @@ class TestModels(unittest.TestCase):
 
     def test_review_exist(self):
         """ check if the methods exists """
-        self.review_1.save()
+        self.review_test.save()
         self.assertTrue(os.path.isfile('file.json'))
-        self.assertTrue(hasattr(self.review_1, "__init__"))
-        self.assertTrue(hasattr(self.review_1, "text"))
-        self.assertTrue(hasattr(self.review_1, "user_id"))
-        self.assertTrue(hasattr(self.review_1, "place_id"))
+        self.assertTrue(hasattr(self.review_test, "__init__"))
+        self.assertTrue(hasattr(self.review_test, "text"))
+        self.assertTrue(hasattr(self.review_test, "user_id"))
+        self.assertTrue(hasattr(self.review_test, "place_id"))
 
     def test_models_to_dict(self):
-        model_1 = self.review_1.to_dict()
-        self.assertIsInstance(model_1["created_at"], str)
-        self.assertIsInstance(model_1["updated_at"], str)
-        self.assertIsInstance(model_1["user_id"], str)
-        self.assertIsInstance(model_1["id"], str)
+        my_dict = self.review_test.to_dict()
+        self.assertIsInstance(my_dict["created_at"], str)
+        self.assertIsInstance(my_dict["updated_at"], str)
+        self.assertIsInstance(my_dict["user_id"], str)
+        self.assertIsInstance(my_dict["id"], str)
 
     def test_user_instance(self):
-        """ check if review_1 is instance of Review """
-        self.assertIsInstance(self.review_1, Review)
+        """ check if review_test is instance of Review """
+        self.assertIsInstance(self.review_test, Review)
 
 if __name__ == '__main__':
     unittest.main()

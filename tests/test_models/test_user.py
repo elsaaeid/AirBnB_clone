@@ -6,16 +6,15 @@ from models.engine.file_storage import FileStorage
 
 
 def setUpModule():
-    """ Funtion to set up a Module"""
+    """ Funtion to set up a Module """
     pass
 
 def tearDownModule():
-    """ Function to clean up a Module"""
+    """ Function to clean up a Module """
     pass
 
 class TestModels(unittest.TestCase):
-    """ Funtion to test the BaseModel"""
-
+    """ Funtion to test the BaseModel """
     def setUp(self):
         """ Set up a variable """
         self.user_test = User()

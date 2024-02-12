@@ -33,14 +33,14 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_quit(self, arg):
-        """quit is command used to exit the program"""
+        """quit is command used to exit the program."""
         return True
 
     def emptyline(self):
         pass
 
     def do_create(self, arg):
-        """create is command used to create a new instance"""
+        """create is command used to create a new instance."""
         if not arg:
             print("** class name missing **")
         elif arg in classes:
@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
-        """show is command used for an existing instance"""
+        """show is command used for an existing instance."""
         my_arg = arg.split(" ")
         if not arg:
             print("** class name missing **")
@@ -74,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
 
     def do_destroy(self, arg):
-        """this deletes an instance based on class and id"""
+        """This deletes an instance based on class and id."""
 
         my_arg = arg.split(" ")
         if not arg:
@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
 
     def do_all(self, arg):
-        """this shows all instances based on class name"""
+        """This shows all instances based on class name."""
 
         my_arg = arg.split(" ")
         if not arg:
@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
             print(my_list)
 
     def do_update(self, arg):
-        """this updates the instances based on class name and id"""
+        """This updates the instances based on class name and id."""
 
         my_arg = shlex.split(arg)
         if len(my_arg) == 0:
@@ -142,7 +142,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_count(self, arg):
-        """this counts all instances based on class name"""
+        """This counts all instances based on class name."""
         count = 0
         my_arg = arg.split(" ")
         if not arg:
@@ -162,7 +162,7 @@ class HBNBCommand(cmd.Cmd):
             print(count)
 
     def do_BaseModel(self, arg):
-        """This sends command based on class BaseModel"""
+        """This sends command based on class BaseModel."""
 
         the_class = "BaseModel"
         my_arg = arg.split(".")

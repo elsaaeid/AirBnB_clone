@@ -19,33 +19,33 @@ def tearDownModule():
 
 
 class TestModels(unittest.TestCase):
-    """this is a unittests of testing instantiation of BaseModel class"""
+    """ This is a unittests of testing instantiation of BaseModel class """
     def setUp(self):
-        """This sets a variable."""
+        """ Set up a variable """
 
         self.my_model = BaseModel()
-        self.my_model.my_number = 55
+        self.my_model.my_number = 29
         print("setUp")
 
     def tearDown(self):
-        """This ends variable."""
+        """ Clean up variable """
 
         print("tearDown")
 
     @classmethod
     def setUpClass(cls):
-        """This sets a class."""
+        """ Set up a class """
 
         print("setUpClass")
 
     @classmethod
     def tearDownClass(cls):
-        """del a class."""
+        """ Clean up a class """
 
         print("tearDownClass")
 
     def modelsDocumentTest(self):
-        """This checks the documentation."""
+        """ Checks the documentation."""
         self.assertIsNotNone(BaseModel.__doc__)
         self.assertIsNotNone(BaseModel.__init__.__doc__)
         self.assertIsNotNone(BaseModel.save.__doc__)

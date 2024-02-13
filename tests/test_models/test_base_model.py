@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
+import models
 import unittest
 import os
+from datetime import datetime
 from models.__init__ import storage
 from models.base_model import BaseModel
 

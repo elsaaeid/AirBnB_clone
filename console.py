@@ -26,17 +26,6 @@ class HBNBCommand(cmd.Cmd):
                "Place": Place, "Amenity": Amenity,
                "Review":  Review}
 
-    def preloop(self):
-        """Prints if isatty is false"""
-        if not sys.__stdin__.isatty():
-            print('(hbnb)')
-
-    def postcmd(self, stop, line):
-        """Prints if isatty is false"""
-        if not sys.__stdin__.isatty():
-            print('(hbnb) ', end='')
-        return stop
-
     def do_EOF(self, arg):
         """EOF is command used to exit the program"""
         return True

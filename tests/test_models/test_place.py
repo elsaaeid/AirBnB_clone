@@ -2,7 +2,6 @@
 import unittest
 import os
 from models.place import Place
-from models.engine.file_storage import FileStorage
 
 
 def setUpModule():

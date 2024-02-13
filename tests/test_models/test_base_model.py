@@ -81,11 +81,11 @@ class TestModels(unittest.TestCase):
     def modelsSaveTest(self):
         """This checks if the save function works."""
 
+        a = self.my_model.updated_at()
         self.my_model.save()
-        self.assertNotEqual(self.my_model.updated_at(),
-                            self.my_model.update_at())
-        self.assertNotEqual(self.my_model.created_at(),
-                            self.my_model.updated_at())
+        self.assertNotEqual(a, self.my_model.update_at)
+        self.assertNotEqual(self.my_model.created_at,
+                            self.my_model.updated_at)
 
     def modelsInstanceTest(self):
         """This checks if user_test is instance of user."""

@@ -51,6 +51,7 @@ class FileStorage:
             with open(FileStorage.__file_path, "r") as my_file:
                 json_file = json.loads(my_file.read())
                 for key in json_file:
-                    FileStorage.__objects[key] = my_dict[json_file[key]['__class__']](**json_file[key])
+                    FileStorage.__objects[key] = my_dict[json_file[key]['__class__']
+                            ](**json_file[key])
         except:
             pass

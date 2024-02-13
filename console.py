@@ -23,9 +23,9 @@ class HBNBCommand(cmd.Cmd):
     file = None
 
     classes = {"BaseModel": BaseModel, "User": User,
-            "State": State, "City": City,
-            "Place": Place, "Amenity": Amenity,
-            "Review":  Review}
+               "State": State, "City": City,
+               "Place": Place, "Amenity": Amenity,
+               "Review":  Review}
 
     def do_EOF(self, arg):
         """EOF is command used to exit the program"""

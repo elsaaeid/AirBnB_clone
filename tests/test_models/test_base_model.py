@@ -59,7 +59,7 @@ class TestModels(unittest.TestCase):
 
     def modelsNumberTest(self):
         """This checks if the number is created."""
-        self.assertEqual(self.my_model.my_number, 55)
+        self.assertEqual(self.my_model.my_number, 29)
 
     def modelsExistTest(self):
         """ This checks if the json file and methods are existed."""

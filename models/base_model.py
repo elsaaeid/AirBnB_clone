@@ -37,9 +37,9 @@ class BaseModel:
             models.storage.new = (self)
 
         def __str__(self):
-            """returns string representation"""
-            return ("[{}] ({}) {}".format(type(self).__class__.__name__,
-                    self.id, self.__dict__))
+            """Returns a string representation of the instance"""
+            cls = (str(type(self)).split('.')[-1]).split('\'')[0]
+            return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
 
         def save(self):
             """updates the update_at"""
@@ -47,9 +47,11 @@ class BaseModel:
             models.storage.save()
 
         def to_dict(self):
-            """returns a dictionary"""
-            my_dict = self.__dict__.to_dict()
-            my_dict['created_at'] = my_dict["created_at"].isoformat()
-            my_dict['updated_at'] = my_dict["updated_at"].isoformat()
-            my_dict['__class__'] = type(self).__class__.__name__
-            return (my_dict)
+            """Convert instance into dict format"""
+            my_dict = {}
+            my_dict.update(self.__dict__)
+            my_dict.update({'__class__':
+                            (str(type(self)).split('.')[-1]).split('\'')[0]})
+            my_dict['created_at'] = self.created_at.isoformat()
+            my_dict['updated_at'] = self.updated_at.isoformat()
+            return my_dict

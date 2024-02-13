@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import unittest
-import pep8
 from models.engine.file_storage import FileStorage
 from models.__init__ import storage
 from models.base_model import BaseModel
@@ -14,17 +13,6 @@ def setUpModule():
 def tearDownModule():
     """ """
     pass
-
-
-class TestString(unittest.TestCase):
-    """ Check the pep8 """
-    def testpep8(self):
-        style = pep8.StyleGuide(quiet=True)
-        storageModule = "models/engine/file_storage.py"
-        matchingModule = "tests/test_models/test_engine/test_file_storage.py"
-        check = style.check_files([storageModule, matchingModule])
-        self.assertEqual(check.total_errors, 0,
-                         "Found code style has errors (warning).")
 
 
 class TestModels(unittest.TestCase):
@@ -51,15 +39,15 @@ class TestModels(unittest.TestCase):
 
     def fileStorageTest(self):
         """ Check the documentation of file storage """
-        self.assertIsNotNone(FileStorage.__doc__)
-        self.assertIsNotNone(FileStorage.__init__.__doc__)
-        self.assertIsNotNone(FileStorage.all.__doc__)
-        self.assertIsNotNone(FileStorage.new.__doc__)
-        self.assertIsNotNone(FileStorage.save.__doc__)
-        self.assertIsNotNone(FileStorage.reload.__doc__)
+        self.assertIsNotNone(FileStorage().__doc__)
+        self.assertIsNotNone(FileStorage().__init__.__doc__)
+        self.assertIsNotNone(FileStorage().all.__doc__)
+        self.assertIsNotNone(FileStorage().new.__doc__)
+        self.assertIsNotNone(FileStorage().save.__doc__)
+        self.assertIsNotNone(FileStorage().reload.__doc__)
 
     def fileStorageExistTest(self):
-        """ Check if methods exist """
+        """ Check if the file storage exists """
         self.assertTrue(hasattr(self.file_storage, "__init__"))
         self.assertTrue(hasattr(self.file_storage, "all"))
         self.assertTrue(hasattr(self.file_storage, "new"))

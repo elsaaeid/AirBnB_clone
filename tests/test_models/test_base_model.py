@@ -20,7 +20,6 @@ def tearDownModule():
 
 class TestModels(unittest.TestCase):
     """this is a unittests of testing instantiation of BaseModel class"""
-
     def setUp(self):
         """This sets a variable."""
 
@@ -47,7 +46,6 @@ class TestModels(unittest.TestCase):
 
     def modelsDocumentTest(self):
         """This checks the documentation."""
-
         self.assertIsNotNone(BaseModel.__doc__)
         self.assertIsNotNone(BaseModel.__init__.__doc__)
         self.assertIsNotNone(BaseModel.save.__doc__)
@@ -56,13 +54,11 @@ class TestModels(unittest.TestCase):
 
     def modelsNameTest(self):
         """This checks if name is created."""
-
         self.my_model.name = 'Holberton'
         self.assertEqual(self.my_model.name, 'Holberton')
 
     def modelsNumberTest(self):
         """This checks if the number is created."""
-
         self.assertEqual(self.my_model.my_number, 55)
 
     def modelsExistTest(self):
@@ -77,12 +73,10 @@ class TestModels(unittest.TestCase):
 
     def modelsNonEmptyTest(self):
         """This checks if the json file is not empty."""
-
         self.assertTrue('file.json')
 
     def modelsSaveTest(self):
         """This checks if the save function works."""
-
         a = self.my_model.updated_at()
         self.my_model.save()
         self.assertNotEqual(a, self.my_model.update_at)
@@ -91,12 +85,10 @@ class TestModels(unittest.TestCase):
 
     def modelsInstanceTest(self):
         """This checks if user_test is instance of user."""
-
         self.assertIsInstance(self.my_model, BaseModel)
 
     def modelsToDictTest(self):
         """test the to_dict method of the BaseModel class"""
-
         my_dict = self.my_model.to_dict()
         self.assertIsInstance(my_dict["created_at"], str)
         self.assertIsInstance(my_dict["updated_at"], str)

@@ -38,9 +38,8 @@ class BaseModel:
 
         def __str__(self):
             """returns string representation"""
-            return ("[{}] ({}) {}".
-                    format(type(self).__class__.__name__, self.id,
-                           self.__dict__))
+            return ("[{}] ({}) {}".format(type(self).__class__.__name__,
+                                                self.id, self.__dict__))
 
         def save(self):
             """updates the update_at"""
@@ -48,8 +47,7 @@ class BaseModel:
             models.storage.save()
 
         def to_dict(self):
-            """returns a dictionary which contain all keys and values
-                                                        of ___dict__"""
+            """returns a dictionary"""
             my_dict = self.__dict__.copy()
             my_dict['created_at'] = my_dict["created_at"].isoformat()
             my_dict['updated_at'] = my_dict["updated_at"].isoformat()

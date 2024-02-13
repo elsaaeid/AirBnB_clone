@@ -48,7 +48,7 @@ class BaseModel:
 
         def to_dict(self):
             """returns a dictionary"""
-            my_dict = self.__dict__.copy()
+            my_dict = self.__dict__.to_dict()
             my_dict['created_at'] = my_dict["created_at"].isoformat()
             my_dict['updated_at'] = my_dict["updated_at"].isoformat()
             my_dict['__class__'] = type(self).__class__.__name__

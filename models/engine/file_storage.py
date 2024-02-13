@@ -33,19 +33,19 @@ class FileStorage:
 
     def save(self):
         """ serializes instances """
-        new_dict = {}
+        my_dict = {}
         for key, value in FileStorage.__objects.items():
-            new_dict.update({key: value.to_dict()})
-        json_file = json.dumps(new_dict)
+            my_dict.update({key: value.to_dict()})
+        json_file = json.dumps(my_dict)
         with open(FileStorage.__file_path, "w") as my_file:
             my_file.write(json_file)
 
     def classesReload(self):
         """ Returns a dictionary of valid classes and their references """
         classes = {"BaseModel": BaseModel, "User": User,
-                         "State": State, "City": City,
-                         "Amenity": Amenity, "Place": Place,
-                         "Review": Review}
+                        "State": State, "City": City,
+                        "Amenity": Amenity, "Place": Place,
+                        "Review": Review}
         return classes
 
     def reload(self):

@@ -20,10 +20,10 @@ class BaseModel:
                 if key == "id":
                     self.id = kwargs.get(key)
                 elif key == "created_at":
-                    self.created_at = datetime.strptime(kwargs.get(key),
+                    self.created_at = datetime.strptime(kwargs["created_at"],
                                                         '%Y-%m-%dT%H:%M:%S.%f')
                 elif key == "updated_at":
-                    self.updated_at = datetime.strptime(kwargs.get(key),
+                    self.updated_at = datetime.strptime(kwargs["updated_at"],
                                                         '%Y-%m-%dT%H:%M:%S.%f')
                 elif key == "my_number":
                     self.my_number = kwargs.get(key)

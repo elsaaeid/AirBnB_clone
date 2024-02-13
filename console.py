@@ -18,7 +18,8 @@ import json
 
 class HBNBCommand(cmd.Cmd):
     """this class for the command interpreter"""
-    prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
+    prompt = '(hbnb)'
+    file = None
 
     classes = {"BaseModel": BaseModel, "User": User,
                "State": State, "City": City,

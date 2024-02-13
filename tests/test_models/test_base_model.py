@@ -53,9 +53,9 @@ class TestModels(unittest.TestCase):
         self.assertIsNotNone(BaseModel.to_dict.__doc__)
 
     def modelsNameTest(self):
-        """This checks if name is created."""
-        self.my_model.name = 'Holberton'
-        self.assertEqual(self.my_model.name, 'Holberton')
+        """ This checks if name is created """
+        self.my_model.name = 'test'
+        self.assertEqual(self.my_model.name, 'test')
 
     def modelsNumberTest(self):
         """This checks if the number is created."""

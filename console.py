@@ -15,18 +15,17 @@ from models.amenity import Amenity
 from models.review import Review
 import json
 
-classes = {"BaseModel": BaseModel, "User": User,
+
+class HBNBCommand(cmd.Cmd):
+    """this class for the command interpreter"""
+
+    prompt = "(hbnb)"
+    file = None
+
+    classes = {"BaseModel": BaseModel, "User": User,
             "State": State, "City": City,
             "Place": Place, "Amenity": Amenity,
             "Review":  Review}
-
-
-class HBNBCommand(cmd.Cmd):
-
-    """this class for the command interpreter"""
-
-    prompt = "(hbnb) "
-    file = None
 
     def do_EOF(self, arg):
         """EOF is command used to exit the program"""

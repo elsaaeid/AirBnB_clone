@@ -39,12 +39,12 @@ class TestModels(unittest.TestCase):
 
     def fileStorageTest(self):
         """ Check the documentation of file storage """
-        self.assertIsNotNone(FileStorage().__doc__)
-        self.assertIsNotNone(FileStorage().__init__.__doc__)
-        self.assertIsNotNone(FileStorage().all.__doc__)
-        self.assertIsNotNone(FileStorage().new.__doc__)
-        self.assertIsNotNone(FileStorage().save.__doc__)
-        self.assertIsNotNone(FileStorage().reload.__doc__)
+        self.assertIsNotNone(FileStorage.__doc__)
+        self.assertIsNotNone(FileStorage.__init__.__doc__)
+        self.assertIsNotNone(FileStorage.all.__doc__)
+        self.assertIsNotNone(FileStorage.new.__doc__)
+        self.assertIsNotNone(FileStorage.save.__doc__)
+        self.assertIsNotNone(FileStorage.reload.__doc__)
 
     def fileStorageExistTest(self):
         """ Check if the file storage exists """

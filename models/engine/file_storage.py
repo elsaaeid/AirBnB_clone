@@ -27,12 +27,12 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        """ creates a new instance """
+        """ Creates a new instance """
         FileStorage.__objects["{}.{}".format(obj.__class__.__name__,
                                              obj.id)] = obj
 
     def save(self):
-        """ serializes instances """
+        """ Serializes instances """
         my_dict = {}
         for key, value in FileStorage.__objects.items():
             my_dict.update({key: value.to_dict()})
@@ -40,19 +40,17 @@ class FileStorage:
         with open(FileStorage.__file_path, "w") as my_file:
             my_file.write(json_file)
 
-    def classesReload(self):
-        """ Returns a dictionary of valid classes and their references """
-        classes = {"BaseModel": BaseModel, "User": User, "State": State,
+    def reload(self):
+        """ deserializes instances """
+        my_dict = {"BaseModel": BaseModel, "User": User, "State": State,
                    "City": City, "Amenity": Amenity, "Place": Place,
                    "Review": Review}
-        return classes
 
-    def reload(self):
-        """Reloads the stored objects"""
-        if not os.path.isfile(FileStorage.__file_path):
-            return
-        with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
-            obj_dict = json.load(f)
-            obj_dict = {k: self.classes()[v["__class__"]](**v)
-                        for k, v in obj_dict.items()}
-            FileStorage.__objects = obj_dict
+        json_file = ""
+        try:
+            with open(FileStorage.__file_path, "r") as my_file:
+                json_file = json.loads(my_file.read())
+                for key in json_file:
+                    FileStorage.__objects[key] = my_dict[json_file[key]['__class__']](**json_file[key])
+        except:
+            pass

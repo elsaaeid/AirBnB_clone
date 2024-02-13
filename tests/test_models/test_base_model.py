@@ -1,5 +1,5 @@
-#!/usr/bin/python3
-""" """
+#!/user/bin/python3
+
 from models.base_model import BaseModel
 import unittest
 import datetime
@@ -8,17 +8,17 @@ import json
 import os
 
 
-class test_basemodel(unittest.TestCase):
-    """ """
+class TestModels(unittest.TestCase):
+    """ This is a unittests of testing instantiation of BaseModel class """
 
     def __init__(self, *args, **kwargs):
-        """ """
+        """ Initialize to basemodel test """
         super().__init__(*args, **kwargs)
         self.name = 'BaseModel'
         self.value = BaseModel
 
     def setUp(self):
-        """ """
+        """ Set up a variable """
         pass
 
     def tearDown(self):
@@ -27,28 +27,28 @@ class test_basemodel(unittest.TestCase):
         except:
             pass
 
-    def test_default(self):
-        """ """
+    def testDefaultValue(self):
+        """ Check defualt values """
         i = self.value()
         self.assertEqual(type(i), self.value)
 
-    def test_kwargs(self):
-        """ """
+    def testKwargs(self):
+        """ Check kwargs """
         i = self.value()
         copy = i.to_dict()
         new = BaseModel(**copy)
         self.assertFalse(new is i)
 
-    def test_kwargs_int(self):
-        """ """
+    def testKwargsValue(self):
+        """ Check kwargs value """
         i = self.value()
         copy = i.to_dict()
         copy.update({1: 2})
         with self.assertRaises(TypeError):
             new = BaseModel(**copy)
 
-    def test_save(self):
-        """ Testing save """
+    def modelsSaveTest(self):
+        """ This checks if the save function works """
         i = self.value()
         i.save()
         key = self.name + "." + i.id
@@ -56,14 +56,14 @@ class test_basemodel(unittest.TestCase):
             j = json.load(f)
             self.assertEqual(j[key], i.to_dict())
 
-    def test_str(self):
-        """ """
+    def testString(self):
+        """ Check string """
         i = self.value()
         self.assertEqual(str(i), '[{}] ({}) {}'.format(self.name, i.id,
                          i.__dict__))
 
-    def test_todict(self):
-        """ """
+    def modelsToDictTest(self):
+        """ test the to_dict method of the BaseModel class """
         i = self.value()
         n = i.to_dict()
         self.assertEqual(i.to_dict(), n)
@@ -80,18 +80,18 @@ class test_basemodel(unittest.TestCase):
         with self.assertRaises(KeyError):
             new = self.value(**n)
 
-    def test_id(self):
-        """ """
+    def testId(self):
+        """ Check id type"""
         new = self.value()
         self.assertEqual(type(new.id), str)
 
-    def test_created_at(self):
-        """ """
+    def testCreatedAt(self):
+        """ Check created_at datetime"""
         new = self.value()
         self.assertEqual(type(new.created_at), datetime.datetime)
 
-    def test_updated_at(self):
-        """ """
+    def testUpdatedAt(self):
+        """ Check updated_at datetime """
         new = self.value()
         self.assertEqual(type(new.updated_at), datetime.datetime)
         n = new.to_dict()

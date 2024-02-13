@@ -19,8 +19,8 @@ class TestModels(unittest.TestCase):
     def setUp(self):
         """ Set up a variable """
         self.user_test = User()
-        self.user_test.firstname = 'Said'
-        self.user_test.lastname = "Ellithy"
+        self.user_test.first_name = 'Said'
+        self.user_test.last_name = "Ellithy"
         self.user_test.email = 'saidsadaoy@gmail.com'
         self.user_test.password = "root"
         print("setUp")
@@ -56,11 +56,11 @@ class TestModels(unittest.TestCase):
 
     def userFirstNameTest(self):
         """ Check if the first name is created """
-        self.assertEqual(self.user_test.firstname, 'Said')
+        self.assertEqual(self.user_test.first_name, 'Said')
 
     def userLastNameTest(self):
         """ Chaeck if the last name is created """
-        self.assertEqual(self.user_test.lastname, "Ellithy")
+        self.assertEqual(self.user_test.last_name, "Ellithy")
 
     def userEmailTest(self):
         """ Chaeck if the email is created """

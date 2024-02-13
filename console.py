@@ -18,7 +18,7 @@ import json
 
 class HBNBCommand(cmd.Cmd):
     """this class for the command interpreter"""
-    prompt = '(hbnb)'
+    prompt = '(hbnb) '
     file = None
 
     classes = {"BaseModel": BaseModel, "User": User,

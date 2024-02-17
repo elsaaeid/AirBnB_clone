@@ -1,0 +1,18 @@
+.container section.places  {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.container section.places h1 {
+    font-size: 30px;
+}
+.container section.places article h2 {
+    width: 390px;
+    border: 1px solid var(--places-border-color);
+    border-radius: 4px;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}

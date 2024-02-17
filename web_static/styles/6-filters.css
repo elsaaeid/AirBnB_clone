@@ -1,4 +1,4 @@
-.filters {
+.container section.filters {
     background-color: var(--filter-color);
     height: 70px;
     width: 100%;
@@ -23,23 +23,23 @@ button {
 button:hover {
     opacity: 90%;
 }
-.filters div.locations, .filters div.amenities {
+section.filters div.locations, .filters div.amenities {
     height: 100%;
     width: 25%;
     text-align: center;
 }
-.filters div h3 {
+section.filters div h3 {
     font-weight: 600;
 }
-.filters div h4 {
+section.filters div h4 {
     font-weight: 400;
     font-size: 14px;
     margin-top: -19px;
 }
-.filters div.locations {
+section.filters div.locations {
     border-right: 1px solid var(--filter-border-color);
 }
-.filters div div {
+section.filters div div {
     width: 100%;
 }
 /* popover */
@@ -52,8 +52,8 @@ button:hover {
     border-radius: 4px;
 }
 /* popover show on hover */
-.filters .locations:hover .popover,
-.filters .amenities:hover .popover {
+section.filters .locations:hover .popover,
+section.filters .amenities:hover .popover {
     display: block;	/* Display the dropdown */
 }
 .popover h2 {

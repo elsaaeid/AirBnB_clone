@@ -11,6 +11,7 @@
     --filter-border-color: #DDDDDD;
     --popover-background-color: #FAFAFA;
     --popover-border-color: #DDDDDD;
+    --places-border-color: #FF5A5F;
   }
 body {
     display: flex; 
@@ -22,7 +23,6 @@ body {
     font-size: 14px;
     font-family: var(--main-font-family);
     min-height: 100vh;
-    overflow: hidden;
 }
 .container {
     max-width: 1000px;

@@ -37,5 +37,5 @@ button:hover {
     font-size: 14px;
 }
 .filters div.locations {
-    border-right: 1px solid #DDDDDD;
+    border-right: 1px solid var(--filter-border-color);
 }

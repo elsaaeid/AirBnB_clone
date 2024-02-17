@@ -15,6 +15,7 @@
     --price_by_night-color: #FF5A5F;
     --price_by_night-border-color: #FF5A5F;
     --information-border-color: #DDDDDD;
+    --article-head-border-color: #DDDDDD;
   }
 body {
     display: flex; 

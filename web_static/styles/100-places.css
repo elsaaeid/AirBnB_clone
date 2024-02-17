@@ -1,4 +1,4 @@
-.container section.places  {
+.container section.places {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,30 +7,33 @@
 .container section.places h1 {
     font-size: 30px;
 }
-.container section.places article {
+.container section.places div article {
     border: 1px solid var(--places-border-color);
     border-radius: 4px;
     width: 390px;
     padding: 20px;
     margin: 20px;
 }
-.container section.places article div {
+.container section.places div {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 }
-.container section.places article div.article-head {
+.container section.places div.article-container {
+    flex-wrap: wrap;
+}
+.container section.places div article div.article-head {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
-.container section.places article div h2 {
+.container section.places div article div h2 {
     font-size: 30px;
     text-align: center;
 }
-.container section.places article div .price_by_night {
+.container section.places div article div .price_by_night {
     color: var(--price_by_night-color);
     border: 4px solid var(--price_by_night-border-color);
     border-radius: 50%;
@@ -39,7 +42,7 @@
     font-size: 30px;
     padding: 7px;
 }
-.container section.places article .information {
+.container section.places div article .information {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -48,7 +51,7 @@
     border-top: 1px solid var(--information-border-color);
     border-bottom: 1px solid var(--information-border-color);
 }
-.container section.places article .information div {
+.container section.places div article .information div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,50 +61,50 @@
 .user h3 {
     margin-left: 10px;
 }
-.container section.places article .information .max_guest,
-.container section.places article .information .number_rooms,
-.container section.places article .information .number_bathrooms {
+.container section.places div article .information .max_guest,
+.container section.places div article .information .number_rooms,
+.container section.places div article .information .number_bathrooms {
     width: 100px;
 }
 /* icons size */
-.container section.places article .information .max_guest .guest_icon,
-.container section.places article .information .number_rooms .room_icon,
-.container section.places article .information .number_bathrooms .bathroom_icon {
+.container section.places div article .information .max_guest .guest_icon,
+.container section.places div article .information .number_rooms .room_icon,
+.container section.places div article .information .number_bathrooms .bathroom_icon {
     width: 50px;
     height: 50px;
 }
 /* style for guest icon */
-.container section.places article .information .max_guest .guest_icon {
+.container section.places div article .information .max_guest .guest_icon {
 	background-image: url("../images/icon_group.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
 /* style for room icon */
-.container section.places article .information .number_rooms .room_icon {
+.container section.places div article .information .number_rooms .room_icon {
 	background-image: url("../images/icon_bed.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
 /* style for bathroom icon */
-.container section.places article .information .number_bathrooms .bathroom_icon {
+.container section.places div article .information .number_bathrooms .bathroom_icon {
 	background-image: url("../images/icon_bath.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.container section.places article .amenities,
-.container section.places article .reviews {
+.container section.places div article .amenities,
+.container section.places div article .reviews {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
-.container section.places article .amenities ul li {
+.container section.places div article .amenities ul li {
     display: flex;
     flex-direction: row;
 }
-.container section.places article .amenities h2,
-.container section.places article .reviews h2 {
+.container section.places div article .amenities h2,
+.container section.places div article .reviews h2 {
     width: 100%;
     font-size: 16px;
     border-bottom: 1px solid var(--article-head-border-color);
@@ -133,13 +136,13 @@
 	height: 20px;
 	margin-right: 10px;
 }
-.container section.places article .reviews ul li h3 {
+.container section.places div article .reviews ul li h3 {
     font-size: 14px;
 }
-.container section.places article .reviews ul li p {
+.container section.places div article .reviews ul li p {
     font-size: 12px;
 }
-.container section.places article .reviews ul li {
+.container section.places div article .reviews ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;

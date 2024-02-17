@@ -1,4 +1,10 @@
 :root {
+    --main-font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    --main-font-color: #484848;
+    --header-backgroundColor: white;
+    --header-bottomBorder-color: #CCCCCC;
+    --footer-backgroundColor: white;
+    --footer-topBorder-color: #CCCCCC;
     --buttonBackground-color: #FF5A5F;
     --button-font-color: #FFFFFF;
     --filter-color: white;

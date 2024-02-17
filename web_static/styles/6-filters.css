@@ -46,6 +46,7 @@ button:hover {
 .popover {
     /* popover hidden as defualt */
     display: none;
+    text-align: left;
     background-color: var(--popover-background-color);
     border: 1px solid var(--popover-border-color);
     border-radius: 4px;
@@ -57,7 +58,9 @@ button:hover {
 }
 .popover h2 {
     font-size: 16px;
+    padding-left: 20px;
 }
 ul {
     list-style: none;
+    padding-left: 20px;
 }

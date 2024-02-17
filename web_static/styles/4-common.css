@@ -12,6 +12,9 @@
     --popover-background-color: #FAFAFA;
     --popover-border-color: #DDDDDD;
     --places-border-color: #FF5A5F;
+    --price_by_night-color: #FF5A5F;
+    --price_by_night-border-color: #FF5A5F;
+    --information-border-color: #DDDDDD;
   }
 body {
     display: flex; 

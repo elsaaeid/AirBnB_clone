@@ -7,12 +7,14 @@
 .container section.places h1 {
     font-size: 30px;
 }
-.container section.places article h2 {
-    width: 390px;
+.container section.places article {
     border: 1px solid var(--places-border-color);
     border-radius: 4px;
-    font-size: 30px;
-    text-align: center;
+    width: 390px;
     padding: 20px;
     margin: 20px;
+}
+.container section.places article h2 {
+    font-size: 30px;
+    text-align: center;
 }

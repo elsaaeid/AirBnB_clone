@@ -9,6 +9,8 @@
     --button-font-color: #FFFFFF;
     --filter-color: white;
     --filter-border-color: #DDDDDD;
+    --popover-background-color: #FAFAFA;
+    --popover-border-color: #DDDDDD;
   }
 body {
     display: flex; 

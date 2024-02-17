@@ -39,3 +39,24 @@ button:hover {
 .filters div.locations {
     border-right: 1px solid var(--filter-border-color);
 }
+/* popover */
+.popover {
+    /* popover hidden as defualt */
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: var(--popover-background-color);
+    border: 1px solid var(--popover-border-color);
+    border-radius: 4px;
+}
+/* popover show on hover */
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
+    display: block;	/* Display the dropdown */
+}
+.popover h2 {
+    font-size: 16px;
+}
+ul {
+    list-style: none;
+}

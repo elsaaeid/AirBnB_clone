@@ -102,6 +102,7 @@
 .container section.places div article .amenities ul li {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .container section.places div article .amenities h2,
 .container section.places div article .reviews h2 {

@@ -140,6 +140,15 @@
 }
 
 /*----------------------------------Responsive-------------------------------*/
+@media only screen and (max-width: 1280px) 
+{
+    .container section.places div article div .price_by_night {
+        min-width: 40px;
+        height: 40px;
+        font-size: 20px;
+        padding: 7px;
+    }
+}
 @media only screen and (max-width: 1030px) 
 {
     .container section.places h1 {

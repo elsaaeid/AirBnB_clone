@@ -110,31 +110,23 @@
     border-bottom: 1px solid var(--article-head-border-color);
     text-align: justify;
 }
-.tv_icon {
-	display: inline-block;
-	background-image: url("../images/icon_tv.png");
-	background-size: cover;
-	width: 20px;
-	height: 20px;
+.amenity-icon-props {
+    display: inline-block;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
 	margin-right: 10px;
+}
+.tv_icon {
+	background-image: url("../images/icon_tv.png");
 }
 
 .wifi_icon {
-	display: inline-block;
     background-image: url("../images/icon_wifi.png");
-    background-size: cover;
-	width: 20px;
-    height: 20px;
-	margin-right: 10px;
 }
 
 .pet_icon {
-	display: inline-block;
     background-image: url("../images/icon_pets.png");
-	background-size: cover;
-    width: 20px;
-	height: 20px;
-	margin-right: 10px;
 }
 .container section.places div article .reviews ul li h3 {
     font-size: 14px;
@@ -154,6 +146,16 @@
 {
     .container section.places h1 {
         width: 18%;
+    }
+    .container section.places div article div .price_by_night {
+        min-width: 40px;
+        height: 40px;
+        font-size: 20px;
+        padding: 7px;
+    }
+    .container section.places div article .information .max_guest .guest_icon, .container section.places div article .information .number_rooms .room_icon, .container section.places div article .information .number_bathrooms .bathroom_icon {
+        width: 40px;
+        height: 40px;
     }
 }
 @media only screen and (max-width: 820px) 

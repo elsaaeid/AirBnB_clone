@@ -4,24 +4,12 @@ import os
 from datetime import datetime
 import uuid
 from hashlib import md5
-from sqlalchemy import Column, String, DateTime
-from sqlalchemy.ext.declarative import declarative_base
 import models
 
-if models.storage_type == "db":
-    Base = declarative_base()
-else:
-    Base = object
 
-
-class BaseModel(Base):
+class BaseModel():
     """Base model that all classes will inherit from"""
     __abstract__ = True
-
-    id = Column(String(60), primary_key=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow)
-    password = Column(String(128))
 
     def __init__(self, *args, **kwargs):
         """Initialization of the base model"""
@@ -53,7 +41,7 @@ class BaseModel(Base):
         cls = type(self).__name__
         return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
 
-    def to_dict(self, secure_pwd=True):
+    def to_dict(self):
         """Converts instance into dict format"""
         new_dict = self.__dict__.copy()
         format_t = "%Y-%m-%dT%H:%M:%S.%f"
@@ -65,8 +53,6 @@ class BaseModel(Base):
         new_dict["__class__"] = type(self).__name__
         if "_sa_instance_state" in new_dict:
             del new_dict["_sa_instance_state"]
-        if secure_pwd and models.storage_type == "db":
-            del new_dict['password']
         return new_dict
 
     @classmethod
@@ -96,8 +82,7 @@ class BaseModel(Base):
         """Updates the updated_at and serializes
         instances to a JSON file
         """
-        if models.storage_type != 'db':
-            self.updated_at = datetime.now()
+        self.updated_at = datetime.now()
         models.storage.new(self)
         models.storage.save()
 
